@@ -48,7 +48,6 @@ function HaulPage() {
                 "Refrigerators, washers, dryers, microwaves, water heaters",
                 "Treadmills, ellipticals, and exercise bikes",
                 "BBQ grills (tanks stay with you)",
-                "Palm fronds and bundled branches cut to liftable lengths",
                 "Small remodel debris — quoted from photos, not a dumpster substitute",
               ].map((line) => (
                 <li key={line} className="rounded-md bg-cream px-4 py-3 shadow-[var(--shadow-border)]">

@@ -66,9 +66,9 @@ export const HAUL = [
     image: "/images/pile.jpg",
   },
   {
-    title: "Yard waste",
-    body: "Palm fronds, bundled branches, and lawn bags already cut to lengths two people can lift.",
-    image: "/images/yard.jpg",
+    title: "TVs & e-waste",
+    body: "Flat-screens, monitors, computers, printers, and other electronics — hauled to certified e-waste recycling.",
+    image: "/images/ewaste.jpg",
   },
   {
     title: "Gym equipment",
