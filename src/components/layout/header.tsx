@@ -21,7 +21,7 @@ export function Header() {
               to={item.to}
               className={cn(
                 "rounded-md px-3 py-2 text-sm font-medium text-muted transition-colors duration-150 hover:text-ink",
-                pathname === item.to && "text-ink",
+                (pathname === item.to || (item.to !== "/" && pathname.startsWith(`${item.to}/`))) && "text-ink",
               )}
             >
               {item.label}
@@ -62,7 +62,7 @@ export function Header() {
                 onClick={() => setOpen(false)}
                 className={cn(
                   "rounded-md px-3 py-3 text-base font-medium text-ink-soft",
-                  pathname === item.to && "bg-paper-2",
+                  (pathname === item.to || (item.to !== "/" && pathname.startsWith(`${item.to}/`))) && "bg-paper-2",
                 )}
               >
                 {item.label}

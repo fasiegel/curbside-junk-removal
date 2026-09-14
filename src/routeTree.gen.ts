@@ -16,6 +16,7 @@ import { Route as HowItWorksRouteImport } from './routes/how-it-works'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as ServiceAreaRouteImport } from './routes/service-area'
 import { Route as WhatWeHaulRouteImport } from './routes/what-we-haul'
+import { Route as ServiceAreaSlugRouteImport } from './routes/service-area_.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -52,6 +53,11 @@ const WhatWeHaulRoute = WhatWeHaulRouteImport.update({
   path: '/what-we-haul',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServiceAreaSlugRoute = ServiceAreaSlugRouteImport.update({
+  id: '/service-area_/$slug',
+  path: '/service-area/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -61,6 +67,7 @@ export interface FileRoutesByFullPath {
   '/pricing': typeof PricingRoute
   '/service-area': typeof ServiceAreaRoute
   '/what-we-haul': typeof WhatWeHaulRoute
+  '/service-area/$slug': typeof ServiceAreaSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -70,6 +77,7 @@ export interface FileRoutesByTo {
   '/pricing': typeof PricingRoute
   '/service-area': typeof ServiceAreaRoute
   '/what-we-haul': typeof WhatWeHaulRoute
+  '/service-area/$slug': typeof ServiceAreaSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -80,6 +88,7 @@ export interface FileRoutesById {
   '/pricing': typeof PricingRoute
   '/service-area': typeof ServiceAreaRoute
   '/what-we-haul': typeof WhatWeHaulRoute
+  '/service-area_/$slug': typeof ServiceAreaSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -91,6 +100,7 @@ export interface FileRouteTypes {
     | '/pricing'
     | '/service-area'
     | '/what-we-haul'
+    | '/service-area/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -100,6 +110,7 @@ export interface FileRouteTypes {
     | '/pricing'
     | '/service-area'
     | '/what-we-haul'
+    | '/service-area/$slug'
   id:
     | '__root__'
     | '/'
@@ -109,6 +120,7 @@ export interface FileRouteTypes {
     | '/pricing'
     | '/service-area'
     | '/what-we-haul'
+    | '/service-area_/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -119,6 +131,7 @@ export interface RootRouteChildren {
   PricingRoute: typeof PricingRoute
   ServiceAreaRoute: typeof ServiceAreaRoute
   WhatWeHaulRoute: typeof WhatWeHaulRoute
+  ServiceAreaSlugRoute: typeof ServiceAreaSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -172,6 +185,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WhatWeHaulRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/service-area_/$slug': {
+      id: '/service-area_/$slug'
+      path: '/service-area/$slug'
+      fullPath: '/service-area/$slug'
+      preLoaderRoute: typeof ServiceAreaSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -183,6 +203,7 @@ const rootRouteChildren: RootRouteChildren = {
   PricingRoute: PricingRoute,
   ServiceAreaRoute: ServiceAreaRoute,
   WhatWeHaulRoute: WhatWeHaulRoute,
+  ServiceAreaSlugRoute: ServiceAreaSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
