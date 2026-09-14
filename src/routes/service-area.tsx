@@ -1,9 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
+import { ClaimBand } from "@/components/claim-band";
 import { PageHero } from "@/components/page-hero";
 import { Button } from "@/components/ui/button";
 import { NEIGHBORHOODS } from "@/lib/content";
-import { SITE, smsHref } from "@/lib/site";
+import { smsHref } from "@/lib/site";
 
 export const Route = createFileRoute("/service-area")({
   component: AreaPage,
@@ -53,7 +54,16 @@ function AreaPage() {
             </li>
           ))}
         </ul>
-        <div className="mt-10 rounded-xl bg-navy p-6 text-cream">
+      </section>
+      <ClaimBand
+        image="/images/claim-lowest.jpg"
+        alt="Lowest curbside junk removal prices in San Diego, from $69"
+        kicker="COUNTYWIDE"
+        title="Lowest curbside prices in San Diego."
+        body="Same posted rates from San Ysidro to La Jolla. One item $69. Two $119. Three $179. Text a photo from any neighborhood on this list."
+      />
+      <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+        <div className="rounded-xl bg-navy p-6 text-cream">
           <h2 className="font-display text-2xl tracking-wide">Not on the list?</h2>
           <p className="mt-2 max-w-xl text-sm text-cream/80">
             We work San Diego County jobs that fit a same-day route. Text the address

@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { ClaimBand } from "@/components/claim-band";
 import { PageHero } from "@/components/page-hero";
 import { Button } from "@/components/ui/button";
 import { HAUL, NO_HAUL } from "@/lib/content";
@@ -72,6 +73,13 @@ function HaulPage() {
           </div>
         </div>
       </section>
+      <ClaimBand
+        image="/images/claim-2005.jpg"
+        alt="Established 2005 shop sign — first curbside junk removal in the USA"
+        kicker="SINCE 2005"
+        title="The first curbside junk removal service in the USA."
+        body="Fred invented the model in San Diego in 2005: stage it at a drive-up spot, skip the inside labor, pay a posted price. Still the same crew."
+      />
     </>
   );
 }

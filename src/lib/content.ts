@@ -1,6 +1,6 @@
 export const STATS = [
   { value: "50,000+", label: "Junk removals since 2005" },
-  { value: "21 years", label: "Locally owned in San Diego" },
+  { value: "2005", label: "America's first curbside junk service" },
   { value: "1,400+", label: "Five-star Google & Yelp reviews" },
   { value: "30%+", label: "Typical savings vs full-service" },
 ] as const;

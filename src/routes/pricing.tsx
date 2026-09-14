@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { ClaimBand } from "@/components/claim-band";
 import { PageHero } from "@/components/page-hero";
 import { Button } from "@/components/ui/button";
 import { formatUsd } from "@/lib/pricing";
@@ -63,6 +64,13 @@ function PricingPage() {
           .
         </p>
       </section>
+      <ClaimBand
+        image="/images/claim-lowest.jpg"
+        alt="Driveway sign: lowest curbside prices in San Diego from $69"
+        kicker="SAN DIEGO"
+        title="Lowest curbside junk removal prices in San Diego."
+        body="Posted rates from $69. No extra-man fee, no travel surcharge, no surprise dump fee. You stage it — that's why the number stays low."
+      />
       <section className="border-t border-line bg-navy text-cream">
         <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-4 py-12 sm:flex-row sm:items-center sm:px-6">
           <div>

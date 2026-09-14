@@ -26,7 +26,7 @@ export function JsonLd() {
     areaServed: "San Diego County",
     openingHours: "Mo-Sa 09:00-16:00",
     description:
-      "Curbside junk removal in San Diego. Stage items at the driveway, garage, or alley. You don't need to be home. From $69.",
+      "Fred invented curbside junk removal in San Diego in 2005 — the first curbside junk removal service in the USA. Lowest curbside prices in San Diego. Stage items at the driveway. From $69.",
   };
   return (
     <script

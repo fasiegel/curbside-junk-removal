@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Check, MessageSquare, Shield, Star, Truck } from "lucide-react";
-import { Estimator } from "@/components/estimator";
+import { ClaimBand } from "@/components/claim-band";
 import { FaqList } from "@/components/faq-list";
 import { JsonLd } from "@/components/json-ld";
 import { Button } from "@/components/ui/button";
@@ -24,8 +24,23 @@ function Home() {
       <Savings />
       <HaulGrid />
       <EstimatorSection />
+      <ClaimBand
+        image="/images/claim-2005.jpg"
+        alt="Shop sign: established 2005, first curbside junk removal in the USA"
+        kicker="SINCE 2005"
+        title="We invented curbside junk removal."
+        body="Fred started it in San Diego in 2005 — the first curbside junk removal service in the USA. Same idea 21 years later: you stage it, we haul it."
+      />
       <Reviews />
       <AboutFred />
+      <ClaimBand
+        image="/images/claim-time-money.jpg"
+        alt="Staged driveway on one side, empty driveway after pickup on the other"
+        kicker="THE TRADE"
+        title="We save time. You save money."
+        body="You skip waiting around for a crew to carry furniture through the house. We skip that labor. The posted curbside rate is the result."
+        align="center"
+      />
       <FaqPreview />
       <FinalCta />
     </>
@@ -249,9 +264,10 @@ function AboutFred() {
           </h2>
           <p className="mt-4 text-base leading-relaxed text-cream/80">
             Curbside Junk Removal is a service of Fred's Junk Removal — owned by Fred
-            Siegel, a US Navy veteran who went to bootcamp at RTC San Diego. The same
-            dump truck and crew have hauled more than 50,000 loads since 2005. Fred
-            answers the phone.
+            Siegel, a US Navy veteran who went to bootcamp at RTC San Diego. In 2005
+            Fred invented curbside junk removal: the first service in the USA built
+            around driveway staging. The same dump truck and crew have hauled more
+            than 50,000 loads since. Fred answers the phone.
           </p>
           <ul className="mt-6 space-y-3 text-sm text-cream/80">
             <li className="flex gap-2">

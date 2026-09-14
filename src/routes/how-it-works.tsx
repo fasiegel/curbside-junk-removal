@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Check } from "lucide-react";
+import { ClaimBand } from "@/components/claim-band";
 import { PageHero } from "@/components/page-hero";
 import { Button } from "@/components/ui/button";
 import { STEPS } from "@/lib/content";
@@ -89,6 +90,14 @@ function HowPage() {
           ))}
         </div>
       </section>
+      <ClaimBand
+        image="/images/claim-time-money.jpg"
+        alt="A staged pile, then an empty driveway after the truck leaves"
+        kicker="THE TRADE"
+        title="We save time. You save money."
+        body="With curbside junk removal, we save time and you save money. You do the carrying once. We skip inside labor. The posted rate is the whole job."
+        align="center"
+      />
     </>
   );
 }
