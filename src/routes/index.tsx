@@ -20,11 +20,11 @@ function Home() {
     <>
       <JsonLd />
       <Hero />
+      <EstimatorSection />
       <TrustBar />
       <HowStrip />
       <Savings />
       <HaulGrid />
-      <EstimatorSection />
       <ClaimBand
         image="/images/claim-2005.jpg"
         alt="Shop sign: established 2005, first curbside junk removal in the USA"
@@ -225,7 +225,7 @@ function EstimatorSection() {
     <section id="estimator" className="border-y border-line bg-paper-2">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
         <p className="font-display text-sm tracking-[0.18em] text-navy">POSTED PRICES</p>
-        <h2 className="mt-2 font-display text-3xl tracking-wide sm:text-4xl">Build a load. See the number.</h2>
+        <h2 className="mt-2 font-display text-3xl tracking-wide sm:text-4xl">Build a load. See the price.</h2>
         <p className="mt-3 max-w-2xl text-base text-muted">
           One item is $69. Two is $119. Three is $179. Add pieces, then text Fred
           the quote. Mixed piles bigger than three items are quoted from a photo.
