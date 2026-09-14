@@ -201,12 +201,18 @@ function HaulGrid() {
       </div>
       <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {HAUL.map((item) => (
-          <li key={item.title} className="overflow-hidden rounded-xl bg-cream shadow-[var(--shadow-border)]">
-            <img src={item.image} alt="" className="aspect-[4/3] w-full object-cover" />
-            <div className="p-5">
-              <h3 className="font-display text-xl tracking-wide">{item.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted">{item.body}</p>
-            </div>
+          <li key={item.slug}>
+            <Link
+              to="/what-we-haul/$slug"
+              params={{ slug: item.slug }}
+              className="block overflow-hidden rounded-xl bg-cream shadow-[var(--shadow-border)] transition-colors duration-150 hover:bg-paper-2"
+            >
+              <img src={item.image} alt="" className="aspect-[4/3] w-full object-cover" />
+              <div className="p-5">
+                <h3 className="font-display text-xl tracking-wide">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted">{item.body}</p>
+              </div>
+            </Link>
           </li>
         ))}
       </ul>

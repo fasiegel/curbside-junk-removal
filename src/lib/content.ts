@@ -46,36 +46,76 @@ export const STEPS = [
 
 export const HAUL = [
   {
+    slug: "furniture",
     title: "Furniture",
     body: "Sofas, sectionals, dressers, desks, tables, chairs, and bed frames.",
     image: "/images/sofa.jpg",
+    lede: "The daily load. Sofas, sectionals, dressers, and tables staged at a San Diego driveway. One named piece is $69. A two-piece sectional is $119.",
+    staging: "Stand sofas and mattresses where the truck can nose in. Take the legs off if they catch a doorway on the way out — once it is at the curb, we load it.",
+    pieces: ["Sofas, loveseats, and recliners", "2- and 3-piece sectionals (each piece is one item)", "Dressers, desks, tables, and bed frames", "Dining chairs, office chairs, and nightstands"],
+    priceNote: "One furniture piece $69. Two pieces $119. Three $179.",
   },
   {
+    slug: "mattresses",
     title: "Mattresses",
     body: "Mattresses and box springs. Routed into California mattress recycling when the plant will take them.",
     image: "/images/mattress.jpg",
+    lede: "Any size mattress is $69 at the curb. Mattress plus box spring is two items — $119. We route them into California mattress recycling when the plant will take them.",
+    staging: "Stand it on edge at the driveway or garage. Bag it if you can. Wet or heavily soiled mattresses still go — tell Fred in the photo.",
+    pieces: ["Twin, full, queen, and king mattresses", "Box springs and foundations", "Mattress + box spring sets", "Sleeper-sofa mattresses pulled from the frame"],
+    priceNote: "Mattress $69. Mattress + box spring $119.",
   },
   {
+    slug: "appliances",
     title: "Appliances",
     body: "Refrigerators, washers, dryers, and water heaters — hauled to scrap and recycling.",
     image: "/images/appliances.jpg",
+    lede: "Fridges, washers, dryers, and water heaters. Unplug and empty them, roll them to a drive-up spot, and we take them to scrap. One appliance is $69. A washer-dryer pair is $119.",
+    staging: "Unplug. Empty the fridge. Disconnect washer hoses and dryer vents if you can. Water heaters must be drained. Leave them standing where the truck can reach.",
+    pieces: ["Refrigerators and freezers", "Washing machines and dryers", "Washer + dryer pairs", "Water heaters, microwaves, and window AC units"],
+    priceNote: "One appliance $69. Washer + dryer $119.",
   },
   {
+    slug: "household-piles",
     title: "Household piles",
     body: "Bags, boxes, broken furniture, and the leftover mix after a move or garage cleanout.",
     image: "/images/pile.jpg",
+    lede: "The leftover mix after a move or garage cleanout — bags, boxes, broken furniture. One to five bags counts as one item at $69. Bigger mixed piles get a photo quote.",
+    staging: "Stack bags and boxes at the driveway. Keep the pile in one pad so we can load without walking the yard. Text a photo if it is more than a few bags.",
+    pieces: ["1–5 bags or boxes (one item, up to 200 lbs)", "Broken furniture mixed with household junk", "Garage and closet cleanout leftovers", "Moving piles staged at a drive-up spot"],
+    priceNote: "1–5 bags $69. Larger mixed piles quoted from a photo.",
   },
   {
+    slug: "tvs-ewaste",
     title: "TVs & e-waste",
     body: "Flat-screens, monitors, computers, printers, and other electronics — hauled to certified e-waste recycling.",
     image: "/images/ewaste.jpg",
+    lede: "Flat-screens, monitors, computers, and printers. Any size TV is $69 at the curb. We take electronics to certified e-waste recycling — we do not wipe hard drives, so pull them first.",
+    staging: "Stand TVs upright at the driveway. Bundle cords if you have them. Remove hard drives before we arrive if you care about the data.",
+    pieces: ["TVs and computer monitors, any size", "Desktops, towers, and laptops", "Printers, scanners, and copiers", "Stereos, game consoles, and small electronics"],
+    priceNote: "One TV or computer $69. Two pieces $119.",
   },
   {
+    slug: "gym-equipment",
     title: "Gym equipment",
     body: "Treadmills, ellipticals, and stationary bikes staged at a drive-up spot.",
     image: "/images/gym.jpg",
+    lede: "Treadmills, ellipticals, and exercise bikes. These are awkward and heavy — that is why the curbside rate exists. Stage it where the dump truck can drive up. $69 for one machine.",
+    staging: "Walk or roll it to the driveway, garage, or alley. Do not leave it at the bottom of basement stairs. If it will not roll, that is full-service.",
+    pieces: ["Treadmills", "Ellipticals and exercise bikes", "Weight benches and small gym stations", "Stair climbers staged at a drive-up spot"],
+    priceNote: "One machine $69. Two machines $119.",
   },
 ] as const;
+
+export type HaulItem = (typeof HAUL)[number];
+
+export function getHaul(slug: string) {
+  return HAUL.find((item) => item.slug === slug);
+}
+
+export function otherHaul(slug: string) {
+  return HAUL.filter((item) => item.slug !== slug);
+}
 
 export const NO_HAUL = [
   "Paint, solvents, and household chemicals",
