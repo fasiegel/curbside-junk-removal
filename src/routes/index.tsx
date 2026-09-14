@@ -206,7 +206,7 @@ function EstimatorSection() {
         <h2 className="mt-2 font-display text-3xl tracking-wide sm:text-4xl">Build a load. See the number.</h2>
         <p className="mt-3 max-w-2xl text-base text-muted">
           One item is $69. Two is $119. Three is $179. Add pieces, then text Fred
-          the quote. Bigger mixed piles use the truck-fill chart on the pricing page.
+          the quote. Mixed piles bigger than three items are quoted from a photo.
         </p>
         <div className="mt-8">
           <Estimator compact />

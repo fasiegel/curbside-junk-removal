@@ -1,7 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Estimator } from "@/components/estimator";
 import { PageHero } from "@/components/page-hero";
-import { TruckFill } from "@/components/truck-fill";
 import { Button } from "@/components/ui/button";
 import { formatUsd } from "@/lib/pricing";
 import { SITE, smsHref } from "@/lib/site";
@@ -64,20 +62,6 @@ function PricingPage() {
           </a>
           .
         </p>
-      </section>
-      <section className="border-y border-line bg-paper-2">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-          <h2 className="font-display text-3xl tracking-wide">Item estimator</h2>
-          <p className="mt-2 max-w-2xl text-muted">
-            Count named pieces the same way Fred does. Sectional pieces are each one item.
-          </p>
-          <div className="mt-8">
-            <Estimator />
-          </div>
-        </div>
-      </section>
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-        <TruckFill />
       </section>
       <section className="border-t border-line bg-navy text-cream">
         <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-4 py-12 sm:flex-row sm:items-center sm:px-6">
