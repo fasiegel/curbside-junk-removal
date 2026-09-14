@@ -4,7 +4,9 @@ import { ClaimBand } from "@/components/claim-band";
 import { PageHero } from "@/components/page-hero";
 import { Button } from "@/components/ui/button";
 import { getHaul, otherHaul } from "@/lib/content";
+import { breadcrumbsJson, seo, serviceJson } from "@/lib/seo";
 import { SITE, smsHref } from "@/lib/site";
+import { JsonLd } from "@/components/json-ld";
 
 export const Route = createFileRoute("/what-we-haul_/$slug")({
   loader: ({ params }) => {
@@ -12,15 +14,13 @@ export const Route = createFileRoute("/what-we-haul_/$slug")({
     if (!item) throw redirect({ to: "/what-we-haul" });
     return { item, others: otherHaul(item.slug) };
   },
-  head: ({ loaderData }) => ({
-    meta: [
-      { title: `${loaderData!.item.title} removal | ${SITE.name}` },
-      {
-        name: "description",
-        content: `${loaderData!.item.lede} Curbside junk removal in San Diego from $69.`,
-      },
-    ],
-  }),
+  head: ({ loaderData }) =>
+    seo({
+      title: `${loaderData!.item.title} removal in San Diego | ${SITE.name}`,
+      description: loaderData!.item.lede,
+      path: `/what-we-haul/${loaderData!.item.slug}`,
+      image: loaderData!.item.image,
+    }),
   component: HaulDetailPage,
 });
 
@@ -58,6 +58,16 @@ function HaulDetailPage() {
 
   return (
     <>
+      <JsonLd
+        data={[
+          serviceJson(item.title, item.lede, `/what-we-haul/${item.slug}`, item.image),
+          breadcrumbsJson([
+            { name: "Home", path: "/" },
+            { name: "What we haul", path: "/what-we-haul" },
+            { name: item.title, path: `/what-we-haul/${item.slug}` },
+          ]),
+        ]}
+      />
       <PageHero kicker="WHAT WE HAUL" title={`${item.title} pickup.`} lede={item.lede}>
         <div className="flex flex-col gap-3 sm:flex-row">
           <Button asChild>

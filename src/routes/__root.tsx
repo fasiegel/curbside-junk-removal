@@ -17,6 +17,11 @@ export const Route = createRootRoute({
           "Curbside junk removal in San Diego by Fred's Junk Removal. Stage it at the driveway — you don't need to be home. Posted prices from $69. Same-day often available.",
       },
       { name: "theme-color", content: "#1B365D" },
+      { name: "robots", content: "index, follow, max-image-preview:large" },
+      { property: "og:site_name", content: SITE.name },
+      { property: "og:locale", content: "en_US" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },

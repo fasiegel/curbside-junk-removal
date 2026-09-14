@@ -3,20 +3,19 @@ import { ClaimBand } from "@/components/claim-band";
 import { PageHero } from "@/components/page-hero";
 import { Button } from "@/components/ui/button";
 import { formatUsd } from "@/lib/pricing";
+import { seo, serviceJson } from "@/lib/seo";
 import { SITE, smsHref } from "@/lib/site";
+import { JsonLd } from "@/components/json-ld";
 
 export const Route = createFileRoute("/pricing")({
   component: PricingPage,
-  head: () => ({
-    meta: [
-      { title: `Pricing | ${SITE.name}` },
-      {
-        name: "description",
-        content:
-          "Curbside junk removal prices in San Diego. $69 for one item, $119 for two, $179 for three. Packed truck $599. No hidden dump fees.",
-      },
-    ],
-  }),
+  head: () =>
+    seo({
+      title: `Junk removal prices in San Diego | ${SITE.name}`,
+      description:
+        "Lowest curbside junk removal prices in San Diego. $69 for one item, $119 for two, $179 for three. Packed truck $599. Dump fee included. No surprise charges.",
+      path: "/pricing",
+    }),
 });
 
 const POSTED = [
@@ -29,6 +28,13 @@ const POSTED = [
 function PricingPage() {
   return (
     <>
+      <JsonLd
+        data={serviceJson(
+          "Curbside junk removal pricing",
+          "Posted curbside junk removal rates in San Diego from $69.",
+          "/pricing",
+        )}
+      />
       <PageHero
         kicker="PRICING"
         title="Posted rates. No surprise dump fee."

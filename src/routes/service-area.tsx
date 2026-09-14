@@ -4,20 +4,19 @@ import { ClaimBand } from "@/components/claim-band";
 import { PageHero } from "@/components/page-hero";
 import { Button } from "@/components/ui/button";
 import { NEIGHBORHOODS } from "@/lib/content";
-import { smsHref } from "@/lib/site";
+import { seo } from "@/lib/seo";
+import { SITE, smsHref } from "@/lib/site";
 
 export const Route = createFileRoute("/service-area")({
   component: AreaPage,
-  head: () => ({
-    meta: [
-      { title: `Service area | ${SITE.name}` },
-      {
-        name: "description",
-        content:
-          "Curbside junk removal across San Diego — North Park, La Jolla, Chula Vista, Pacific Beach, and 30 more neighborhoods. From $69.",
-      },
-    ],
-  }),
+  head: () =>
+    seo({
+      title: `San Diego junk removal service area | ${SITE.name}`,
+      description:
+        "Curbside junk removal across San Diego — North Park, La Jolla, Chula Vista, Pacific Beach, and 30 more neighborhoods. Posted rates from $69.",
+      path: "/service-area",
+      image: "/images/neighborhood.jpg",
+    }),
 });
 
 function AreaPage() {

@@ -1,19 +1,26 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { FaqList } from "@/components/faq-list";
+import { JsonLd } from "@/components/json-ld";
 import { PageHero } from "@/components/page-hero";
 import { Button } from "@/components/ui/button";
+import { faqJson, seo } from "@/lib/seo";
 import { SITE, smsHref } from "@/lib/site";
 
 export const Route = createFileRoute("/faq")({
   component: FaqPage,
-  head: () => ({
-    meta: [{ title: `FAQ | ${SITE.name}` }],
-  }),
+  head: () =>
+    seo({
+      title: `Junk removal FAQ | ${SITE.name}`,
+      description:
+        "Do I need to be home? How much does curbside junk removal cost in San Diego? Same-day windows, recycling, payment, and what we will not haul.",
+      path: "/faq",
+    }),
 });
 
 function FaqPage() {
   return (
     <>
+      <JsonLd data={faqJson()} />
       <PageHero
         kicker="FAQ"
         title="The questions people text first."

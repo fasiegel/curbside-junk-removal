@@ -4,13 +4,19 @@ import { ClaimBand } from "@/components/claim-band";
 import { PageHero } from "@/components/page-hero";
 import { Button } from "@/components/ui/button";
 import { HAUL, NO_HAUL } from "@/lib/content";
-import { smsHref } from "@/lib/site";
+import { seo } from "@/lib/seo";
+import { SITE, smsHref } from "@/lib/site";
 
 export const Route = createFileRoute("/what-we-haul")({
   component: HaulPage,
-  head: () => ({
-    meta: [{ title: `What we haul | ${SITE.name}` }],
-  }),
+  head: () =>
+    seo({
+      title: `What we haul | Furniture, mattresses, TVs | ${SITE.name}`,
+      description:
+        "Curbside junk removal for furniture, mattresses, appliances, TVs and e-waste, gym equipment, and household piles in San Diego. From $69.",
+      path: "/what-we-haul",
+      image: "/images/sofa.jpg",
+    }),
 });
 
 function HaulPage() {

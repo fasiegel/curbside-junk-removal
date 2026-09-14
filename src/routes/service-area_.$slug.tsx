@@ -5,7 +5,9 @@ import { PageHero } from "@/components/page-hero";
 import { Button } from "@/components/ui/button";
 import { getNeighborhood, nearbyNeighborhoods } from "@/lib/content";
 import { formatUsd } from "@/lib/pricing";
+import { breadcrumbsJson, seo, serviceJson } from "@/lib/seo";
 import { SITE, smsHref } from "@/lib/site";
+import { JsonLd } from "@/components/json-ld";
 
 export const Route = createFileRoute("/service-area_/$slug")({
   loader: ({ params }) => {
@@ -13,17 +15,13 @@ export const Route = createFileRoute("/service-area_/$slug")({
     if (!area) throw redirect({ to: "/service-area" });
     return { area, nearby: nearbyNeighborhoods(area.slug) };
   },
-  head: ({ loaderData }) => ({
-    meta: [
-      {
-        title: `${loaderData!.area.name} junk removal | ${SITE.name}`,
-      },
-      {
-        name: "description",
-        content: `Curbside junk removal in ${loaderData!.area.name}, San Diego ${loaderData!.area.zip}. Stage it at the driveway — from $69. You don't need to be home.`,
-      },
-    ],
-  }),
+  head: ({ loaderData }) =>
+    seo({
+      title: `${loaderData!.area.name} junk removal | San Diego ${loaderData!.area.zip}`,
+      description: `Curbside junk removal in ${loaderData!.area.name}, San Diego ${loaderData!.area.zip}. ${loaderData!.area.note} From $69. You don't need to be home.`,
+      path: `/service-area/${loaderData!.area.slug}`,
+      image: "/images/neighborhood.jpg",
+    }),
   component: AreaDetailPage,
 });
 
@@ -75,6 +73,21 @@ function AreaDetailPage() {
 
   return (
     <>
+      <JsonLd
+        data={[
+          serviceJson(
+            `Curbside junk removal in ${area.name}`,
+            area.note,
+            `/service-area/${area.slug}`,
+            "/images/neighborhood.jpg",
+          ),
+          breadcrumbsJson([
+            { name: "Home", path: "/" },
+            { name: "Service area", path: "/service-area" },
+            { name: area.name, path: `/service-area/${area.slug}` },
+          ]),
+        ]}
+      />
       <PageHero
         kicker={`${area.zip} · SAN DIEGO`}
         title={`Curbside junk removal in ${area.name}.`}

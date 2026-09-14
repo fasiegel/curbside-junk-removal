@@ -4,13 +4,19 @@ import { ClaimBand } from "@/components/claim-band";
 import { PageHero } from "@/components/page-hero";
 import { Button } from "@/components/ui/button";
 import { STEPS } from "@/lib/content";
+import { seo } from "@/lib/seo";
 import { SITE, smsHref } from "@/lib/site";
 
 export const Route = createFileRoute("/how-it-works")({
   component: HowPage,
-  head: () => ({
-    meta: [{ title: `How it works | ${SITE.name}` }],
-  }),
+  head: () =>
+    seo({
+      title: `How curbside junk removal works | ${SITE.name}`,
+      description:
+        "Stage items at the driveway, text a photo, we load the truck. You don't need to be home. Same-day curbside junk removal in San Diego, Monday–Saturday 9–4.",
+      path: "/how-it-works",
+      image: "/images/staged.jpg",
+    }),
 });
 
 const CHECKLIST = [

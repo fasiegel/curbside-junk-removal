@@ -6,19 +6,24 @@ import { FaqList } from "@/components/faq-list";
 import { JsonLd } from "@/components/json-ld";
 import { Button } from "@/components/ui/button";
 import { HAUL, REVIEWS, STATS, STEPS } from "@/lib/content";
+import { localBusinessJson, seo } from "@/lib/seo";
 import { SITE, smsHref } from "@/lib/site";
 
 export const Route = createFileRoute("/")({
   component: Home,
-  head: () => ({
-    meta: [{ title: `${SITE.name} | San Diego curbside pickup from $69` }],
-  }),
+  head: () =>
+    seo({
+      title: `${SITE.name} | San Diego curbside pickup from $69`,
+      description:
+        "Curbside junk removal in San Diego by Fred's Junk Removal. The first curbside junk service in the USA (2005). Stage it at the driveway — from $69. You don't need to be home.",
+      path: "/",
+    }),
 });
 
 function Home() {
   return (
     <>
-      <JsonLd />
+      <JsonLd data={localBusinessJson()} />
       <Hero />
       <EstimatorSection />
       <TrustBar />
