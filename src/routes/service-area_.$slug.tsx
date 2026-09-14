@@ -1,5 +1,6 @@
 import { createFileRoute, Link, redirect } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ClaimBand } from "@/components/claim-band";
 import { PageHero } from "@/components/page-hero";
 import { Button } from "@/components/ui/button";
 import { getNeighborhood, nearbyNeighborhoods } from "@/lib/content";
@@ -26,6 +27,39 @@ export const Route = createFileRoute("/service-area_/$slug")({
   component: AreaDetailPage,
 });
 
+const CLAIMS = [
+  {
+    image: "/images/claim-2005.jpg",
+    alt: "Established 2005 shop sign — first curbside junk removal in the USA",
+    kicker: "SINCE 2005",
+    title: "We invented curbside junk removal.",
+    body: (name: string) =>
+      `Fred started it in San Diego in 2005 — the first curbside junk removal service in the USA. ${name} still gets that same driveway model.`,
+  },
+  {
+    image: "/images/claim-lowest.jpg",
+    alt: "Lowest curbside junk removal prices in San Diego from $69",
+    kicker: "SAN DIEGO",
+    title: "Lowest curbside prices in San Diego.",
+    body: (name: string) =>
+      `Posted rates in ${name} start at $69. No extra-man fee, no travel surcharge. You stage it — that's why the number stays low.`,
+  },
+  {
+    image: "/images/claim-time-money.jpg",
+    alt: "A staged driveway, then an empty driveway after pickup",
+    kicker: "THE TRADE",
+    title: "We save time. You save money.",
+    body: (name: string) =>
+      `With curbside junk removal in ${name}, we save time and you save money. You skip waiting for inside labor. We skip that labor on the bill.`,
+    align: "center" as const,
+  },
+];
+
+function claimFor(slug: string) {
+  const n = [...slug].reduce((sum, ch) => sum + ch.charCodeAt(0), 0);
+  return CLAIMS[n % CLAIMS.length];
+}
+
 const RATES = [
   { name: "1 item", price: 69 },
   { name: "2 items", price: 119 },
@@ -34,6 +68,7 @@ const RATES = [
 
 function AreaDetailPage() {
   const { area, nearby } = Route.useLoaderData();
+  const claim = claimFor(area.slug);
   const sms = smsHref(
     `Hi Fred, I'd like to book this furniture removal in ${area.name} ${area.zip}.`,
   );
@@ -92,6 +127,14 @@ function AreaDetailPage() {
           </p>
         </div>
       </section>
+      <ClaimBand
+        image={claim.image}
+        alt={claim.alt}
+        kicker={claim.kicker}
+        title={claim.title}
+        body={claim.body(area.name)}
+        align={"align" in claim ? claim.align : "left"}
+      />
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
         <h2 className="font-display text-3xl tracking-wide">Nearby routes</h2>
         <ul className="mt-6 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
