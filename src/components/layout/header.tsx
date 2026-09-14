@@ -12,6 +12,17 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-line/80 bg-paper/90 backdrop-blur-md">
+      <p className="bg-navy px-4 py-2 text-center text-xs leading-snug text-cream sm:px-6 sm:text-sm">
+        Curbside Junk Removal is a service provided by{" "}
+        <a
+          href={SITE.parentUrl}
+          className="font-semibold underline decoration-cream/40 underline-offset-2 hover:decoration-cream"
+        >
+          Fred's Junk Removal
+        </a>
+        {" "}
+        — San Diego's top-rated and most trusted junk removal service.
+      </p>
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
         <Logo />
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
