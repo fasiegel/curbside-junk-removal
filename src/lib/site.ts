@@ -2,7 +2,6 @@ export const SITE = {
   name: "Curbside Junk Removal",
   shortName: "Curbside",
   parent: "Fred's Junk Removal",
-  parentUrl: "https://www.fredsjunkremoval.com",
   tagline: "Leave it at the curb. We'll take it from there.",
   phone: "6192459957",
   phoneDisplay: "(619) 245-9957",

@@ -57,11 +57,8 @@ function PricingPage() {
         <p className="mt-6 max-w-3xl text-sm leading-relaxed text-muted">
           Sample item rates from Fred's 2026 price list: mattress, sofa, dresser, fridge,
           washer, dryer, treadmill, TV, BBQ, or 1–5 bags — $69 each when staged at a
-          drive-up spot. Need items carried from inside? That's full-service on{" "}
-          <a href={SITE.parentUrl} className="underline decoration-line underline-offset-2">
-            fredsjunkremoval.com
-          </a>
-          .
+          drive-up spot. Need items carried from inside? That's full-service
+          through {SITE.parent}.
         </p>
       </section>
       <ClaimBand

@@ -119,11 +119,8 @@ function AreaDetailPage() {
             ))}
           </ol>
           <p className="mt-8 max-w-2xl text-sm leading-relaxed text-muted">
-            Inside carries, stairs, and backyard hauls are full-service at{" "}
-            <a href={SITE.parentUrl} className="underline decoration-line underline-offset-2">
-              {SITE.parent}
-            </a>
-            . Same crew. Different rate.
+            Inside carries, stairs, and backyard hauls are full-service through {SITE.parent}.
+            Same crew. Different rate.
           </p>
         </div>
       </section>

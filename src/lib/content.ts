@@ -197,7 +197,7 @@ export const FAQS = [
   },
   {
     q: "What counts as curbside?",
-    a: "A place we can drive the dump truck to: driveway, residential garage, alley, or carport. We need about 10 feet of clearance in width and height. Backyards, upstairs, and interiors are full-service on fredsjunkremoval.com.",
+    a: "A place we can drive the dump truck to: driveway, residential garage, alley, or carport. We need about 10 feet of clearance in width and height. Backyards, upstairs, and interiors are full-service through Fred's Junk Removal.",
   },
   {
     q: "Do you recycle?",
@@ -217,6 +217,6 @@ export const FAQS = [
   },
   {
     q: "Need items carried from inside?",
-    a: "That is full-service, run by the same crew at Fred's Junk Removal. You point, we carry from inside, the second floor, or the backyard. Start on this site for curbside, or book full-service at fredsjunkremoval.com.",
+    a: "That is full-service, run by the same crew at Fred's Junk Removal. You point, we carry from inside, the second floor, or the backyard. Start on this site for curbside.",
   },
 ] as const;

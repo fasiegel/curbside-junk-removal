@@ -13,7 +13,6 @@ export function JsonLd() {
     parentOrganization: {
       "@type": "LocalBusiness",
       name: SITE.parent,
-      url: SITE.parentUrl,
     },
     address: {
       "@type": "PostalAddress",

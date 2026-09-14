@@ -45,11 +45,7 @@ export function Footer() {
                 {SITE.email}
               </a>
             </li>
-            <li>
-              <a href={SITE.parentUrl} className="hover:text-cream">
-                Full-service at {SITE.parent}
-              </a>
-            </li>
+            <li>Full-service through {SITE.parent}</li>
             <li>Venmo {SITE.venmo}</li>
             <li>Cash App {SITE.cashApp}</li>
           </ul>
