@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Curbside Junk Removal | San Diego curbside pickup from $69</title>
+  <meta name="description" content="Curbside junk removal in San Diego by Fred's Junk Removal. Stage it at the driveway — you don't need to be home. Posted prices from $69. Same-day often available." />
+  <meta name="theme-color" content="#1B365D" />
+  <link rel="icon" type="image/svg+xml" href="https://cdn.jsdelivr.net/gh/fasiegel/curbside-junk-removal@main/public/favicon.svg" />
+  <style>
+    @font-face { font-family: Figtree; font-style: normal; font-weight: 400 700; font-display: swap; src: url("https://cdn.jsdelivr.net/gh/fasiegel/curbside-junk-removal@main/public/fonts/figtree.woff2") format("woff2"); }
+    @font-face { font-family: Oswald; font-style: normal; font-weight: 500 700; font-display: swap; src: url("https://cdn.jsdelivr.net/gh/fasiegel/curbside-junk-removal@main/public/fonts/oswald.woff2") format("woff2"); }
+    :root { --paper:#F6F1E8; --paper2:#EFE8DB; --cream:#FBF8F2; --ink:#161412; --muted:#6B6358; --navy:#1B365D; --navy2:#12243F; --asphalt:#1A1816; --line:#D9D0C3; --sage:#3F5C4A; --rust:#8C4A32; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: Figtree, ui-sans-serif, system-ui, sans-serif; background: var(--paper); color: var(--ink); line-height: 1.5; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    .wrap { max-width: 72rem; margin: 0 auto; padding: 0 1.25rem; }
+    .display { font-family: Oswald, ui-sans-serif, sans-serif; letter-spacing: .04em; }
+    header { position: sticky; top: 0; z-index: 40; backdrop-filter: blur(12px); background: rgb(246 241 232 / .92); border-bottom: 1px solid var(--line); }
+    .bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; height: 4rem; }
+    .brand { display: flex; align-items: center; gap: .65rem; text-decoration: none; }
+    .mark { width: 2.25rem; height: 2.25rem; background: var(--navy); color: var(--cream); display: grid; place-items: center; border-radius: .4rem; }
+    nav { display: none; gap: .25rem; }
+    nav a { text-decoration: none; padding: .5rem .75rem; font-size: .875rem; color: var(--muted); font-weight: 500; }
+    nav a:hover { color: var(--ink); }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; border: 0; border-radius: .4rem; font-weight: 600; text-decoration: none; cursor: pointer; font-family: inherit; }
+    .btn-navy { background: var(--navy); color: var(--cream); }
+    .btn-navy:hover { background: var(--navy2); }
+    .btn-cream { background: var(--cream); color: var(--navy); }
+    .btn-ghost { background: transparent; color: var(--cream); box-shadow: inset 0 0 0 1px rgb(251 248 242 / .3); }
+    .btn-lg { height: 3rem; padding: 0 1.25rem; font-size: 1rem; }
+    .btn-md { height: 2.5rem; padding: 0 .9rem; font-size: .875rem; }
+    .hero { position: relative; min-height: 34rem; color: var(--cream); background: var(--asphalt); overflow: hidden; }
+    .hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .hero .scrim { position: absolute; inset: 0; background: linear-gradient(90deg, rgb(26 24 22 / .92), rgb(26 24 22 / .7), rgb(26 24 22 / .25)); }
+    .hero .copy { position: relative; max-width: 72rem; margin: 0 auto; min-height: 34rem; display: flex; flex-direction: column; justify-content: flex-end; padding: 3rem 1.25rem; }
+    .hero h1 { font-size: clamp(2.75rem, 8vw, 4.5rem); line-height: .95; margin: .75rem 0 0; max-width: 14ch; }
+    .kicker { font-size: .75rem; letter-spacing: .18em; opacity: .8; }
+    .stats { background: var(--navy); color: var(--cream); }
+    .stats .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 2rem 1.25rem; }
+    .stats .n { font-size: 2rem; margin: 0; }
+    .stats p { margin: .25rem 0 0; font-size: .875rem; opacity: .75; }
+    section h2 { font-size: clamp(1.75rem, 4vw, 2.75rem); margin: 0; }
+    .muted { color: var(--muted); }
+    .pad { padding: 4rem 0; }
+    .grid-3 { display: grid; gap: 1.25rem; }
+    .card { background: var(--cream); border-radius: 1rem; box-shadow: 0 0 0 1px rgb(22 20 18 / .06); overflow: hidden; }
+    .card img { height: 11rem; width: 100%; object-fit: cover; }
+    .card .p { padding: 1.1rem 1.2rem 1.3rem; }
+    .savings { background: var(--paper2); }
+    .compare { display: grid; gap: 1rem; margin-top: 2rem; }
+    .compare article { background: var(--cream); border-radius: 1rem; padding: 1.25rem; }
+    .compare .price { font-size: 2.25rem; margin: .4rem 0 0; }
+    .est { display: grid; gap: 1rem; }
+    .items { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
+    .item { text-align: left; background: var(--cream); border: 0; border-radius: .7rem; padding: .85rem; cursor: pointer; font-family: inherit; box-shadow: inset 0 0 0 1px var(--line); }
+    .item.on { box-shadow: inset 0 0 0 2px var(--navy); background: #e6ebf2; }
+    .item b { display: block; }
+    .item span { display: block; color: var(--muted); font-size: .75rem; margin-top: .2rem; }
+    .quote { background: var(--navy); color: var(--cream); border-radius: 1rem; padding: 1.25rem; }
+    .quote .big { font-size: 2.5rem; margin: .2rem 0; }
+    details { background: var(--cream); border-radius: .75rem; padding: 1rem 1.15rem; }
+    details + details { margin-top: .5rem; }
+    summary { cursor: pointer; font-weight: 600; list-style: none; }
+    summary::-webkit-details-marker { display: none; }
+    footer { background: var(--asphalt); color: var(--cream); padding: 3.5rem 0 6rem; }
+    footer a { color: rgb(251 248 242 / .85); text-decoration: none; }
+    .sticky { position: fixed; left: 0; right: 0; bottom: 0; background: rgb(246 241 232 / .96); border-top: 1px solid var(--line); padding: .75rem; display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
+    .sticky a { height: 3rem; }
+    @media (min-width: 640px) {
+      .hero, .hero .copy { min-height: 40rem; }
+      .stats .wrap, .grid-3, .compare, .est { grid-template-columns: repeat(2, 1fr); }
+      .items { grid-template-columns: repeat(3, 1fr); }
+      .sticky { display: none; }
+      .stats .n { font-size: 2.25rem; }
+    }
+    @media (min-width: 960px) {
+      nav { display: flex; }
+      .stats .wrap, .grid-3 { grid-template-columns: repeat(4, 1fr); }
+      .grid-haul { grid-template-columns: repeat(3, 1fr) !important; }
+      .est { grid-template-columns: 1.4fr .8fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap bar">
+      <a class="brand" href="#top" aria-label="Curbside Junk Removal home">
+        <span class="mark" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 32 32" fill="none"><path d="M6 22h20" stroke="currentColor" stroke-width="2.5"/><path d="M8 22V13l8-5 8 5v9" stroke="currentColor" stroke-width="2.2"/><path d="M12 22v-5h8v5" stroke="currentColor" stroke-width="2"/></svg>
+        </span>
+        <span><span class="display" style="display:block;font-size:1.15rem">CURBSIDE</span><span style="display:block;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)">Junk Removal</span></span>
+      </a>
+      <nav aria-label="Primary">
+        <a href="#pricing">Pricing</a>
+        <a href="#how">How it works</a>
+        <a href="#haul">What we haul</a>
+        <a href="#area">Service area</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="btn btn-navy btn-md" href="sms:6192459957?body=Hi%20Fred%2C%20I%20need%20curbside%20junk%20pickup.">Text a photo</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <img src="https://cdn.jsdelivr.net/gh/fasiegel/curbside-junk-removal@main/public/images/hero.jpg" alt="Fred's crew loading a sofa from a San Diego driveway into a dump truck" />
+      <div class="scrim"></div>
+      <div class="copy">
+        <p class="display kicker">A SERVICE OF FRED'S JUNK REMOVAL · SAN DIEGO</p>
+        <h1 class="display">Leave it at the curb.</h1>
+        <p style="max-width:36rem;color:rgb(251 248 242 / .85)">Stage the pile at the driveway, garage, or alley. We load the truck. You don't need to be home. Posted prices from $69 — labor, haul, and dump included.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.5rem">
+          <a class="btn btn-cream btn-lg" href="sms:6192459957?body=Hi%20Fred%2C%20I%20need%20curbside%20junk%20pickup.">Text a photo for a quote</a>
+          <a class="btn btn-ghost btn-lg" href="#estimator">Price your load</a>
+        </div>
+        <p style="margin-top:1.1rem;font-size:.9rem;opacity:.75">(619) 245-9957 · Mon–Sat 9–4 · Same-day often available</p>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="wrap">
+        <div><p class="display n">50,000+</p><p>Junk removals since 2005</p></div>
+        <div><p class="display n">21 years</p><p>Locally owned in San Diego</p></div>
+        <div><p class="display n">1,400+</p><p>Five-star Google & Yelp reviews</p></div>
+        <div><p class="display n">30%+</p><p>Typical savings vs full-service</p></div>
+      </div>
+    </section>
+
+    <section class="pad" id="how">
+      <div class="wrap">
+        <p class="display kicker muted">HOW CURBSIDE WORKS</p>
+        <h2 class="display">You stage it. We haul it.</h2>
+        <div class="grid-3" style="margin-top:2rem;grid-template-columns:1fr">
+          <article class="card"><div class="p"><p class="display" style="color:var(--navy)">01</p><h3>Stage it where we can drive up</h3><p class="muted">Driveway, residential garage, carport, or alley. About 10 feet of width and height for the dump truck. You do not have to be home.</p></div></article>
+          <article class="card"><div class="p"><p class="display" style="color:var(--navy)">02</p><h3>Text a photo or price it here</h3><p class="muted">Send pictures to (619) 245-9957, or tap items below. Fred replies with a clear number. The price you accept is the amount you pay.</p></div></article>
+          <article class="card"><div class="p"><p class="display" style="color:var(--navy)">03</p><h3>We load, sweep, and go</h3><p class="muted">Same-day is often available Monday through Saturday. We text on the way, load the pile, sweep the path, and recycle first.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="savings pad" id="pricing">
+      <div class="wrap">
+        <p class="display kicker muted">POSTED PRICES</p>
+        <h2 class="display">Curbside is cheaper because you do the carrying.</h2>
+        <p class="muted" style="max-width:38rem">A queen mattress is $69 at the curb versus $130 if we carry it out of a bedroom. Labor, haul, and dump are included.</p>
+        <div class="compare">
+          <article><p class="muted">1 item · under 200 lbs</p><p class="display price">$69</p><p class="muted">vs $130 full-service</p></article>
+          <article><p class="muted">2 items · pickup-truck load</p><p class="display price">$119</p><p class="muted">vs $180 full-service</p></article>
+          <article><p class="muted">3 items</p><p class="display price">$179</p><p class="muted">Posted curbside rate</p></article>
+          <article><p class="muted">Packed dump bed</p><p class="display price">$599</p><p class="muted">20 cubic yards / 2,000 lbs</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="pad" id="haul">
+      <div class="wrap">
+        <p class="display kicker muted">WHAT WE HAUL</p>
+        <h2 class="display">If it sits at the curb, we take it.</h2>
+        <div class="grid-3 grid-haul" style="margin-top:2rem">
+          <article class="card"><img src="https://cdn.jsdelivr.net/gh/fasiegel/curbside-junk-removal@main/public/images/sofa.jpg" alt="Sofa at the curb" /><div class="p"><h3>Furniture</h3><p class="muted">Sofas, sectionals, dressers, desks, tables, chairs, and bed frames.</p></div></article>
+          <article class="card"><img src="https://cdn.jsdelivr.net/gh/fasiegel/curbside-junk-removal@main/public/images/mattress.jpg" alt="Mattress staged for pickup" /><div class="p"><h3>Mattresses</h3><p class="muted">Mattresses and box springs. Recycled when the plant will take them.</p></div></article>
+          <article class="card"><img src="https://cdn.jsdelivr.net/gh/fasiegel/curbside-junk-removal@main/public/images/appliances.jpg" alt="Washer and dryer" /><div class="p"><h3>Appliances</h3><p class="muted">Refrigerators, washers, dryers, and water heaters — hauled to scrap.</p></div></article>
+          <article class="card"><img src="https://cdn.jsdelivr.net/gh/fasiegel/curbside-junk-removal@main/public/images/pile.jpg" alt="Household junk pile" /><div class="p"><h3>Household piles</h3><p class="muted">Bags, boxes, broken furniture, and leftovers after a move.</p></div></article>
+          <article class="card"><img src="https://cdn.jsdelivr.net/gh/fasiegel/curbside-junk-removal@main/public/images/yard.jpg" alt="Yard waste pile" /><div class="p"><h3>Yard waste</h3><p class="muted">Palm fronds, bundled branches, and lawn bags two people can lift.</p></div></article>
+          <article class="card"><img src="https://cdn.jsdelivr.net/gh/fasiegel/curbside-junk-removal@main/public/images/gym.jpg" alt="Exercise equipment" /><div class="p"><h3>Gym equipment</h3><p class="muted">Treadmills, ellipticals, and stationary bikes at a drive-up spot.</p></div></article>
+        </div>
+        <p class="muted" style="margin-top:1.25rem">We do not take paint, chemicals, fuels, propane tanks, asbestos, medical waste, or explosives.</p>
+      </div>
+    </section>
+
+    <section class="pad" id="estimator" style="background:var(--paper2)">
+      <div class="wrap">
+        <p class="display kicker muted">LOAD BUILDER</p>
+        <h2 class="display">Tap what is sitting at the curb.</h2>
+        <p class="muted">Posted item rates. Text a photo if the pile is mixed or heavier than it looks.</p>
+        <div class="est" style="margin-top:1.5rem">
+          <div id="items" class="items"></div>
+          <aside class="quote">
+            <p class="muted" style="color:rgb(251 248 242 / .7);margin:0">Curbside estimate</p>
+            <p class="display big" id="price">$0</p>
+            <p id="label" style="color:rgb(251 248 242 / .75)">Add items to see a price</p>
+            <p id="save" style="margin:.75rem 0 0;color:#c5d9c8"></p>
+            <a id="sms" class="btn btn-cream btn-lg" style="width:100%;margin-top:1.25rem" href="sms:6192459957?body=Hi%20Fred%2C%20I%20need%20curbside%20junk%20pickup.">Text this quote to Fred</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="pad" id="area">
+      <div class="wrap">
+        <p class="display kicker muted">SERVICE AREA</p>
+        <h2 class="display">San Diego County. Same-day often available.</h2>
+        <p class="muted" style="max-width:38rem">From La Jolla to Chula Vista, Point Loma to College Grove. Downtown, North Park, Pacific Beach, Mission Valley, Coronado, and everywhere in between.</p>
+        <p style="margin-top:1rem">1455 Kettner Blvd #1502, San Diego, CA 92101 · Mon–Sat, 9:00 AM – 4:00 PM</p>
+      </div>
+    </section>
+
+    <section class="pad" id="faq" style="background:var(--paper2)">
+      <div class="wrap" style="max-width:48rem">
+        <p class="display kicker muted">FAQ</p>
+        <h2 class="display">Straight answers.</h2>
+        <div style="margin-top:1.5rem">
+          <details open><summary>Do I need to be home?</summary><p class="muted">No. Curbside means the items sit at a drive-up spot. We load the truck. We text when we are on the way.</p></details>
+          <details><summary>How much does it cost?</summary><p class="muted">From $69 for one item. Two items $119. Three items $179. Packed dump bed $599. The quote you accept is the amount you pay.</p></details>
+          <details><summary>How fast can you come?</summary><p class="muted">Same-day is often available Monday through Saturday, 9 to 4. After-hours texts are answered the next business morning.</p></details>
+          <details><summary>How do I pay?</summary><p class="muted">Card, PayPal, Venmo @fredsjunk, Cash App $fredsjunk, Zelle to (619) 245-9957 (Fred Siegel), or cash on site.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero" style="min-height:22rem">
+      <img src="https://cdn.jsdelivr.net/gh/fasiegel/curbside-junk-removal@main/public/images/after.jpg" alt="Clean driveway after pickup" />
+      <div class="scrim"></div>
+      <div class="copy" style="min-height:22rem;align-items:center;text-align:center">
+        <h2 class="display" style="font-size:clamp(2rem,5vw,3rem)">Stage it tonight. Gone tomorrow.</h2>
+        <p>Text a photo to (619) 245-9957. Fred quotes before the truck rolls.</p>
+        <a class="btn btn-cream btn-lg" href="sms:6192459957?body=Hi%20Fred%2C%20I%20need%20curbside%20junk%20pickup.">Text Fred now</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap" style="display:grid;gap:2rem">
+      <div>
+        <p class="display" style="font-size:1.4rem;margin:0">CURBSIDE</p>
+        <p class="muted" style="color:rgb(251 248 242 / .7);max-width:28rem">A service of Fred's Junk Removal. Locally owned. Veteran owned. Posted prices. You do not need to be home.</p>
+      </div>
+      <div>
+        <p><a href="tel:+16192459957">(619) 245-9957</a><br /><a href="mailto:fred@fredsjunkremoval.com">fred@fredsjunkremoval.com</a><br /><a href="https://www.fredsjunkremoval.com">Full-service at Fred's Junk Removal</a></p>
+        <p class="muted" style="color:rgb(251 248 242 / .55);font-size:.8rem">© 2026 Fred's Junk Removal. CurbsideJunkRemoval.com · Quoted price guarantee</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="sticky">
+    <a class="btn" style="background:var(--paper2);color:var(--ink)" href="tel:+16192459957">Call Fred</a>
+    <a class="btn btn-navy" href="sms:6192459957?body=Hi%20Fred%2C%20I%20need%20curbside%20junk%20pickup.">Text a photo</a>
+  </div>
+
+  <script>
+    const CATALOG = [
+      { id: "sofa", name: "Sofa / loveseat", units: 1 },
+      { id: "sectional-2", name: "2-piece sectional", units: 2 },
+      { id: "dresser", name: "Dresser, desk, table", units: 1 },
+      { id: "mattress", name: "Mattress", units: 1 },
+      { id: "mattress-set", name: "Mattress + box spring", units: 2 },
+      { id: "fridge", name: "Refrigerator", units: 1 },
+      { id: "washer-dryer", name: "Washer + dryer", units: 2 },
+      { id: "tv", name: "TV or monitor", units: 1 },
+      { id: "treadmill", name: "Treadmill", units: 1 },
+      { id: "bags", name: "1–5 bags or boxes", units: 1 },
+      { id: "yard-small", name: "Small yard pile", units: 1 },
+      { id: "grill", name: "BBQ grill", units: 1 }
+    ];
+    const qty = {};
+    function quote(units) {
+      if (units <= 0) return { curb: 0, full: 0, label: "Add items to see a price" };
+      if (units === 1) return { curb: 69, full: 130, label: "1 item · up to 2 cubic yards / 200 lbs" };
+      if (units === 2) return { curb: 119, full: 180, label: "2 items · up to 4 cubic yards / 400 lbs" };
+      if (units === 3) return { curb: 179, full: null, label: "3 items · up to 6 cubic yards / 600 lbs" };
+      return { curb: 179 + (units - 3) * 60, full: null, label: units + " items · estimate — text a photo to confirm" };
+    }
+    function render() {
+      const root = document.getElementById("items");
+      root.innerHTML = CATALOG.map((item) => {
+        const n = qty[item.id] || 0;
+        return `<button class="item${n ? " on" : ""}" data-id="${item.id}" type="button"><b>${item.name}</b><span>${n ? n + " added" : "Tap to add"}</span></button>`;
+      }).join("");
+      const units = CATALOG.reduce((s, i) => s + (qty[i.id] || 0) * i.units, 0);
+      const q = quote(units);
+      document.getElementById("price").textContent = q.curb ? "$" + q.curb : "$0";
+      document.getElementById("label").textContent = q.label;
+      document.getElementById("save").textContent = q.full && q.curb ? "Save $" + (q.full - q.curb) + " vs full-service" : "";
+      const names = CATALOG.filter((i) => qty[i.id]).map((i) => (qty[i.id] > 1 ? qty[i.id] + "× " : "") + i.name);
+      const body = names.length
+        ? "Hi Fred, curbside quote request: " + names.join(", ") + " — about $" + q.curb + ". Photos attached."
+        : "Hi Fred, I need curbside junk pickup.";
+      document.getElementById("sms").href = "sms:6192459957?body=" + encodeURIComponent(body);
+    }
+    document.getElementById("items").addEventListener("click", (e) => {
+      const btn = e.target.closest("[data-id]");
+      if (!btn) return;
+      const id = btn.getAttribute("data-id");
+      qty[id] = (qty[id] || 0) + 1;
+      if (qty[id] > 4) qty[id] = 0;
+      render();
+    });
+    render();
+  </script>
+</body>
+</html>
