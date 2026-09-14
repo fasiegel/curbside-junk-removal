@@ -61,10 +61,10 @@ function Hero() {
             </a>
           </Button>
           <Button variant="onDark" size="lg" asChild>
-            <Link to="/book">
+            <a href="/pricing">
               Price your load
               <ArrowRight />
-            </Link>
+            </a>
           </Button>
         </div>
         <p className="mt-5 text-sm text-cream/70">{SITE.phoneDisplay} · Mon–Sat 9–4 · Same-day often available</p>
@@ -200,7 +200,7 @@ function HaulGrid() {
 
 function EstimatorSection() {
   return (
-    <section className="border-y border-line bg-paper-2">
+    <section id="estimator" className="border-y border-line bg-paper-2">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
         <p className="font-display text-sm tracking-[0.18em] text-navy">POSTED PRICES</p>
         <h2 className="mt-2 font-display text-3xl tracking-wide sm:text-4xl">Build a load. See the number.</h2>
