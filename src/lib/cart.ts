@@ -59,7 +59,7 @@ export function cartSmsBody(qty: Record<string, number>, extras?: string) {
   const quote = cartQuote(qty);
   const itemLines =
     lines.length === 0
-      ? "I need a curbside pickup."
+      ? "I'll send a photo of the pile."
       : lines.map((line) => `• ${line.count}× ${line.item.name}`).join("\n");
   const price =
     quote.curb == null
@@ -68,7 +68,7 @@ export function cartSmsBody(qty: Record<string, number>, extras?: string) {
         ? `Estimated curbside: $${quote.curb} (please confirm from photos)`
         : `Posted curbside: $${quote.curb}`;
   const parts = [
-    "Hi Fred — curbside junk pickup request.",
+    "Hi Fred, I'd like to book this furniture removal.",
     itemLines,
     price,
     extras,

@@ -1,5 +1,4 @@
 import { useMemo, useState } from "react";
-import { Link } from "@tanstack/react-router";
 import { Minus, Plus, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cartLines, cartQuote, cartSmsBody, useCart } from "@/lib/cart";
@@ -8,7 +7,7 @@ import { smsHref } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 export function Estimator({ compact = false }: { compact?: boolean }) {
-  const [filter, setFilter] = useState<(typeof CATEGORIES)[number]["id"]>("all");
+  const [filter, setFilter] = useState<(typeof CATEGORIES)[number]["id"]>("furniture");
   const qty = useCart((s) => s.qty);
   const add = useCart((s) => s.add);
   const remove = useCart((s) => s.remove);
@@ -16,7 +15,7 @@ export function Estimator({ compact = false }: { compact?: boolean }) {
   const lines = cartLines(qty);
 
   const items = useMemo(
-    () => CATALOG.filter((item) => filter === "all" || item.category === filter),
+    () => CATALOG.filter((item) => item.category === filter),
     [filter],
   );
 
@@ -94,9 +93,6 @@ export function Estimator({ compact = false }: { compact?: boolean }) {
               <MessageSquare />
               Text this quote
             </a>
-          </Button>
-          <Button variant="ghost" asChild className="text-cream hover:bg-navy-deep">
-            <Link to="/book">Finish booking details</Link>
           </Button>
         </div>
       </aside>

@@ -1,10 +1,10 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { Estimator } from "@/components/estimator";
 import { PageHero } from "@/components/page-hero";
 import { TruckFill } from "@/components/truck-fill";
 import { Button } from "@/components/ui/button";
 import { formatUsd } from "@/lib/pricing";
-import { SITE } from "@/lib/site";
+import { SITE, smsHref } from "@/lib/site";
 
 export const Route = createFileRoute("/pricing")({
   component: PricingPage,
@@ -86,7 +86,7 @@ function PricingPage() {
             <p className="mt-2 text-cream/75">Fred guarantees the quote when the load matches the pictures.</p>
           </div>
           <Button variant="invert" asChild>
-            <Link to="/book">Send the load</Link>
+            <a href={smsHref()}>Text Fred a photo</a>
           </Button>
         </div>
       </section>

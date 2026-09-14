@@ -68,13 +68,6 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
-            <Link
-              to="/book"
-              onClick={() => setOpen(false)}
-              className="rounded-md px-3 py-3 text-base font-medium text-ink-soft"
-            >
-              Price your load
-            </Link>
           </nav>
           <div className="mt-3 grid grid-cols-2 gap-2">
             <Button variant="outline" asChild>

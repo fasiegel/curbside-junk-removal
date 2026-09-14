@@ -30,11 +30,6 @@ export function Footer() {
                 </Link>
               </li>
             ))}
-            <li>
-              <Link to="/book" className="text-cream/80 hover:text-cream">
-                Price your load
-              </Link>
-            </li>
           </ul>
         </div>
         <div>

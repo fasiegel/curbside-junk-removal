@@ -18,7 +18,7 @@ export const SITE = {
 
 export function smsHref(body?: string) {
   const base = `sms:${SITE.phone}`;
-  if (!body) return `${base}?body=${encodeURIComponent("Hi Fred, I need curbside junk pickup.")}`;
+  if (!body) return `${base}?body=${encodeURIComponent("Hi Fred, I'd like to book this furniture removal.")}`;
   return `${base}?body=${encodeURIComponent(body)}`;
 }
 

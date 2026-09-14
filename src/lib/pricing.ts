@@ -173,8 +173,7 @@ export const CATALOG: CatalogItem[] = [
   },
 ];
 
-export const CATEGORIES: { id: CatalogItem["category"] | "all"; label: string }[] = [
-  { id: "all", label: "All items" },
+export const CATEGORIES: { id: CatalogItem["category"]; label: string }[] = [
   { id: "furniture", label: "Furniture" },
   { id: "mattress", label: "Mattresses" },
   { id: "appliance", label: "Appliances" },

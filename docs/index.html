@@ -114,7 +114,7 @@
         <p style="max-width:36rem;color:rgb(251 248 242 / .85)">Stage the pile at the driveway, garage, or alley. We load the truck. You don't need to be home. Posted prices from $69 — labor, haul, and dump included.</p>
         <div style="display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.5rem">
           <a class="btn btn-cream btn-lg" href="sms:6192459957?body=Hi%20Fred%2C%20I%20need%20curbside%20junk%20pickup.">Text a photo for a quote</a>
-          <a class="btn btn-ghost btn-lg" href="#estimator">Price your load</a>
+          <a class="btn btn-ghost btn-lg" href="/pricing">Price your load</a>
         </div>
         <p style="margin-top:1.1rem;font-size:.9rem;opacity:.75">(619) 245-9957 · Mon–Sat 9–4 · Same-day often available</p>
       </div>
@@ -276,8 +276,8 @@
       document.getElementById("save").textContent = q.full && q.curb ? "Save $" + (q.full - q.curb) + " vs full-service" : "";
       const names = CATALOG.filter((i) => qty[i.id]).map((i) => (qty[i.id] > 1 ? qty[i.id] + "× " : "") + i.name);
       const body = names.length
-        ? "Hi Fred, curbside quote request: " + names.join(", ") + " — about $" + q.curb + ". Photos attached."
-        : "Hi Fred, I need curbside junk pickup.";
+        ? "Hi Fred, I'd like to book this furniture removal.\n\n" + names.join(", ") + " — about $" + q.curb + "."
+        : "Hi Fred, I'd like to book this furniture removal.";
       document.getElementById("sms").href = "sms:6192459957?body=" + encodeURIComponent(body);
     }
     document.getElementById("items").addEventListener("click", (e) => {
