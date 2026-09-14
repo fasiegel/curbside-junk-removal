@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Check, MessageSquare, Shield, Star, Truck } from "lucide-react";
 import { ClaimBand } from "@/components/claim-band";
+import { Estimator } from "@/components/estimator";
 import { FaqList } from "@/components/faq-list";
 import { JsonLd } from "@/components/json-ld";
 import { Button } from "@/components/ui/button";
