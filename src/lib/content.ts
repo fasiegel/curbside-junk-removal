@@ -35,7 +35,7 @@ export const STEPS = [
   {
     n: "02",
     title: "Text a photo or price it here",
-    body: "Send pictures to (619) 245-9957, or build a load on this site. Fred replies with a clear number. The price you accept is the amount you pay.",
+    body: "Send pictures to (619) 245-9957, or build a load on this site. Fred replies with a clear price. The price you accept is the amount you pay.",
   },
   {
     n: "03",

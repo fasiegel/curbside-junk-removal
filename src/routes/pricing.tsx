@@ -38,7 +38,7 @@ function PricingPage() {
       <PageHero
         kicker="PRICING"
         title="Posted rates. No surprise dump fee."
-        lede="Labor, hauling, and disposal are in the number. The quote you accept from photos is the amount you pay. Full-service prices shown so you can see what staging saves."
+        lede="Labor, hauling, and disposal are in the price. The quote you accept from photos is the amount you pay. Full-service prices shown so you can see what staging saves."
       />
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -72,7 +72,7 @@ function PricingPage() {
         alt="Driveway sign: lowest curbside prices in San Diego from $69"
         kicker="SAN DIEGO"
         title="Lowest curbside junk removal prices in San Diego."
-        body="Posted rates from $69. No extra-man fee, no travel surcharge, no surprise dump fee. You stage it — that's why the number stays low."
+        body="Posted rates from $69. No extra-man fee, no travel surcharge, no surprise dump fee. You stage it — that's why the price stays low."
       />
       <section className="border-t border-line bg-navy text-cream">
         <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-4 py-12 sm:flex-row sm:items-center sm:px-6">

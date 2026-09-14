@@ -40,7 +40,7 @@ const CLAIMS = [
     kicker: "SAN DIEGO",
     title: "Lowest curbside prices in San Diego.",
     body: (name: string) =>
-      `Posted rates in ${name} start at $69. No extra-man fee, no travel surcharge. You stage it — that's why the number stays low.`,
+      `Posted rates in ${name} start at $69. No extra-man fee, no travel surcharge. You stage it — that's why the price stays low.`,
   },
   {
     image: "/images/claim-time-money.jpg",
@@ -122,7 +122,7 @@ function AreaDetailPage() {
           <ol className="mt-6 grid gap-4 sm:grid-cols-3">
             {[
               "Stage the pile at a driveway, garage, carport, or alley the dump truck can reach.",
-              "Text Fred a photo. The number you accept is the amount you pay.",
+              "Text Fred a photo. The price you accept is the amount you pay.",
               "We load, sweep, and go. You do not have to be home.",
             ].map((line, i) => (
               <li key={line} className="rounded-xl bg-cream p-5 shadow-[var(--shadow-border)]">

@@ -35,7 +35,7 @@ function HowPage() {
       <PageHero
         kicker="HOW IT WORKS"
         title="Stage it. Quote it. We take it."
-        lede="Curbside is the cheaper rate because you do the carrying to a drive-up spot. From there the job looks like any other Fred's pickup — on-time, swept clean, paid at the posted number."
+        lede="Curbside is the cheaper rate because you do the carrying to a drive-up spot. From there the job looks like any other Fred's pickup — on-time, swept clean, paid at the posted price."
       >
         <Button asChild>
           <a href={smsHref()}>Text a photo</a>

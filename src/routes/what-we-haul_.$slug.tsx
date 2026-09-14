@@ -37,7 +37,7 @@ const CLAIMS = [
     alt: "Lowest curbside prices in San Diego from $69",
     kicker: "SAN DIEGO",
     title: "Lowest curbside prices in San Diego.",
-    body: "Posted rates from $69. You stage it. That's why the number stays low.",
+    body: "Posted rates from $69. You stage it. That's why the price stays low.",
   },
   {
     image: "/images/claim-time-money.jpg",

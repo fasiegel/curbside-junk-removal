@@ -77,7 +77,7 @@ export function Estimator({ compact = false }: { compact?: boolean }) {
           </p>
           {quote.estimated && (
             <p className="mt-2 text-xs leading-relaxed text-cream/65">
-              Loads this size are quoted from photos. Use this as a planning number.
+              Loads this size are quoted from photos. Use this as a planning price.
             </p>
           )}
           {quote.full ? (
