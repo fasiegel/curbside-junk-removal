@@ -105,6 +105,7 @@ function AreaDetailPage() {
           </Button>
         </div>
       </PageHero>
+      {area.slug === "clairemont-mesa" ? <ClairemontJob /> : null}
       <section className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:px-6 lg:grid-cols-3">
         {RATES.map((row) => (
           <article key={row.name} className="rounded-xl bg-cream p-5 shadow-[var(--shadow-border)]">
@@ -166,5 +167,31 @@ function AreaDetailPage() {
         </ul>
       </section>
     </>
+  );
+}
+
+function ClairemontJob() {
+  return (
+    <section className="mx-auto grid max-w-6xl items-center gap-8 px-4 py-12 sm:px-6 lg:grid-cols-2">
+      <img
+        src="/images/jobs/clairemont-box-springs/01-staged.jpg"
+        alt="Two box springs staged at a Clairemont driveway"
+        className="aspect-[3/4] w-full rounded-xl object-cover sm:aspect-[4/3] lg:aspect-[3/4]"
+      />
+      <div>
+        <p className="font-display text-sm tracking-[0.18em] text-navy">A REAL JOB</p>
+        <h2 className="mt-2 font-display text-3xl tracking-wide">Two box springs, this driveway.</h2>
+        <p className="mt-3 text-sm leading-relaxed text-muted">
+          Staged outside a Clairemont garage. The crew dollied both foundations to the
+          truck and left the pad clear. Two items, $119.
+        </p>
+        <Button className="mt-6" asChild>
+          <Link to="/jobs/clairemont-box-springs">
+            See the pickup
+            <ArrowRight />
+          </Link>
+        </Button>
+      </div>
+    </section>
   );
 }

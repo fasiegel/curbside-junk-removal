@@ -81,6 +81,7 @@ function HaulDetailPage() {
           </Button>
         </div>
       </PageHero>
+      {item.slug === "mattresses" ? <BoxSpringJob /> : null}
       <section className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-2 lg:items-center">
         <img
           src={item.image}
@@ -135,5 +136,31 @@ function HaulDetailPage() {
         </ul>
       </section>
     </>
+  );
+}
+
+function BoxSpringJob() {
+  return (
+    <section className="mx-auto grid max-w-6xl items-center gap-8 px-4 py-12 sm:px-6 lg:grid-cols-2">
+      <img
+        src="/images/jobs/clairemont-box-springs/05-rolling.jpg"
+        alt="Crew rolling two box springs down a Clairemont driveway"
+        className="aspect-[3/4] w-full rounded-xl object-cover sm:aspect-[4/3]"
+      />
+      <div>
+        <p className="font-display text-sm tracking-[0.18em] text-navy">CLAIREMONT</p>
+        <h2 className="mt-2 font-display text-3xl tracking-wide">Two box springs, $119.</h2>
+        <p className="mt-3 text-sm leading-relaxed text-muted">
+          A real curbside pickup: both foundations staged at the driveway, rolled on a
+          dolly, and gone. Mattress plus box spring is the same two-item rate.
+        </p>
+        <Button className="mt-6" asChild>
+          <Link to="/jobs/clairemont-box-springs">
+            See the Clairemont job
+            <ArrowRight />
+          </Link>
+        </Button>
+      </div>
+    </section>
   );
 }

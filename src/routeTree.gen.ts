@@ -16,6 +16,7 @@ import { Route as HowItWorksRouteImport } from './routes/how-it-works'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as ServiceAreaRouteImport } from './routes/service-area'
 import { Route as WhatWeHaulRouteImport } from './routes/what-we-haul'
+import { Route as JobsClairemontBoxSpringsRouteImport } from './routes/jobs.clairemont-box-springs'
 import { Route as ServiceAreaSlugRouteImport } from './routes/service-area_.$slug'
 import { Route as WhatWeHaulSlugRouteImport } from './routes/what-we-haul_.$slug'
 
@@ -54,6 +55,12 @@ const WhatWeHaulRoute = WhatWeHaulRouteImport.update({
   path: '/what-we-haul',
   getParentRoute: () => rootRouteImport,
 } as any)
+const JobsClairemontBoxSpringsRoute =
+  JobsClairemontBoxSpringsRouteImport.update({
+    id: '/jobs/clairemont-box-springs',
+    path: '/jobs/clairemont-box-springs',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ServiceAreaSlugRoute = ServiceAreaSlugRouteImport.update({
   id: '/service-area_/$slug',
   path: '/service-area/$slug',
@@ -73,6 +80,7 @@ export interface FileRoutesByFullPath {
   '/pricing': typeof PricingRoute
   '/service-area': typeof ServiceAreaRoute
   '/what-we-haul': typeof WhatWeHaulRoute
+  '/jobs/clairemont-box-springs': typeof JobsClairemontBoxSpringsRoute
   '/service-area/$slug': typeof ServiceAreaSlugRoute
   '/what-we-haul/$slug': typeof WhatWeHaulSlugRoute
 }
@@ -84,6 +92,7 @@ export interface FileRoutesByTo {
   '/pricing': typeof PricingRoute
   '/service-area': typeof ServiceAreaRoute
   '/what-we-haul': typeof WhatWeHaulRoute
+  '/jobs/clairemont-box-springs': typeof JobsClairemontBoxSpringsRoute
   '/service-area/$slug': typeof ServiceAreaSlugRoute
   '/what-we-haul/$slug': typeof WhatWeHaulSlugRoute
 }
@@ -96,6 +105,7 @@ export interface FileRoutesById {
   '/pricing': typeof PricingRoute
   '/service-area': typeof ServiceAreaRoute
   '/what-we-haul': typeof WhatWeHaulRoute
+  '/jobs/clairemont-box-springs': typeof JobsClairemontBoxSpringsRoute
   '/service-area_/$slug': typeof ServiceAreaSlugRoute
   '/what-we-haul_/$slug': typeof WhatWeHaulSlugRoute
 }
@@ -109,6 +119,7 @@ export interface FileRouteTypes {
     | '/pricing'
     | '/service-area'
     | '/what-we-haul'
+    | '/jobs/clairemont-box-springs'
     | '/service-area/$slug'
     | '/what-we-haul/$slug'
   fileRoutesByTo: FileRoutesByTo
@@ -120,6 +131,7 @@ export interface FileRouteTypes {
     | '/pricing'
     | '/service-area'
     | '/what-we-haul'
+    | '/jobs/clairemont-box-springs'
     | '/service-area/$slug'
     | '/what-we-haul/$slug'
   id:
@@ -131,6 +143,7 @@ export interface FileRouteTypes {
     | '/pricing'
     | '/service-area'
     | '/what-we-haul'
+    | '/jobs/clairemont-box-springs'
     | '/service-area_/$slug'
     | '/what-we-haul_/$slug'
   fileRoutesById: FileRoutesById
@@ -143,6 +156,7 @@ export interface RootRouteChildren {
   PricingRoute: typeof PricingRoute
   ServiceAreaRoute: typeof ServiceAreaRoute
   WhatWeHaulRoute: typeof WhatWeHaulRoute
+  JobsClairemontBoxSpringsRoute: typeof JobsClairemontBoxSpringsRoute
   ServiceAreaSlugRoute: typeof ServiceAreaSlugRoute
   WhatWeHaulSlugRoute: typeof WhatWeHaulSlugRoute
 }
@@ -198,6 +212,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WhatWeHaulRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/jobs/clairemont-box-springs': {
+      id: '/jobs/clairemont-box-springs'
+      path: '/jobs/clairemont-box-springs'
+      fullPath: '/jobs/clairemont-box-springs'
+      preLoaderRoute: typeof JobsClairemontBoxSpringsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/service-area_/$slug': {
       id: '/service-area_/$slug'
       path: '/service-area/$slug'
@@ -223,6 +244,7 @@ const rootRouteChildren: RootRouteChildren = {
   PricingRoute: PricingRoute,
   ServiceAreaRoute: ServiceAreaRoute,
   WhatWeHaulRoute: WhatWeHaulRoute,
+  JobsClairemontBoxSpringsRoute: JobsClairemontBoxSpringsRoute,
   ServiceAreaSlugRoute: ServiceAreaSlugRoute,
   WhatWeHaulSlugRoute: WhatWeHaulSlugRoute,
 }
