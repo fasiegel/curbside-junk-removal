@@ -176,7 +176,7 @@ function ClairemontJob() {
       <img
         src="/images/jobs/clairemont-box-springs/01-staged.jpg"
         alt="Two box springs staged at a Clairemont driveway"
-        className="aspect-[3/4] w-full rounded-xl object-cover sm:aspect-[4/3] lg:aspect-[3/4]"
+        className="aspect-[3/4] w-full rounded-xl object-cover object-center"
       />
       <div>
         <p className="font-display text-sm tracking-[0.18em] text-navy">A REAL JOB</p>

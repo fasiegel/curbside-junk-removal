@@ -86,7 +86,7 @@ function JobPage() {
             <img
               src={step.src}
               alt={step.title}
-              className={`aspect-[3/4] w-full rounded-xl object-cover ${i % 2 === 1 ? "lg:order-2" : ""}`}
+              className={`aspect-[3/4] w-full rounded-xl object-cover object-center ${i % 2 === 1 ? "lg:order-2" : ""}`}
             />
             <div className={i % 2 === 1 ? "lg:order-1" : ""}>
               <p className="font-display text-sm tracking-[0.16em] text-navy">0{i + 1}</p>

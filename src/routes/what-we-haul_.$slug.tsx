@@ -145,7 +145,7 @@ function BoxSpringJob() {
       <img
         src="/images/jobs/clairemont-box-springs/05-rolling.jpg"
         alt="Crew rolling two box springs down a Clairemont driveway"
-        className="aspect-[3/4] w-full rounded-xl object-cover sm:aspect-[4/3]"
+        className="aspect-[3/4] w-full rounded-xl object-cover object-center"
       />
       <div>
         <p className="font-display text-sm tracking-[0.18em] text-navy">CLAIREMONT</p>
