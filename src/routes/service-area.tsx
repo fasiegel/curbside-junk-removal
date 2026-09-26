@@ -13,7 +13,7 @@ export const Route = createFileRoute("/service-area")({
     seo({
       title: `San Diego junk removal service area | ${SITE.name}`,
       description:
-        "Curbside junk removal across San Diego — North Park, La Jolla, Chula Vista, Pacific Beach, and 30 more neighborhoods. Posted rates from $69.",
+        "Curbside junk removal across San Diego — coast, central, South Bay, East County, Mira Mesa, Carmel Valley, and Scripps Ranch. Posted rates from $69.",
       path: "/service-area",
       image: "/images/neighborhood.jpg",
     }),
@@ -24,8 +24,8 @@ function AreaPage() {
     <>
       <PageHero
         kicker="SERVICE AREA"
-        title="San Ysidro to La Jolla. Inland through the mesa."
-        lede="Central San Diego and nearby cities — Chula Vista, National City, Coronado, Imperial Beach, and Mission Valley. Pick your neighborhood for local staging notes and posted rates."
+        title="Same map as the rest of San Diego we haul."
+        lede="Coast, central, South Bay, and East County — La Mesa, Lemon Grove, Spring Valley, Santee, plus Mira Mesa, Carmel Valley, and Scripps Ranch. Same posted curbside rates in every neighborhood."
       />
       <section className="relative">
         <img
