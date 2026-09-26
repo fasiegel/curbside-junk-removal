@@ -13,7 +13,7 @@ export const Route = createFileRoute("/what-we-haul")({
     seo({
       title: `What we haul | Furniture, mattresses, TVs | ${SITE.name}`,
       description:
-        "Curbside junk removal for furniture, mattresses, appliances, TVs and e-waste, gym equipment, and household piles in San Diego. From $69.",
+        "Curbside hauling in San Diego: furniture, mattresses, appliances, TVs, e-waste, gym equipment, and household piles. Driveway pickup from $69.",
       path: "/what-we-haul",
       image: "/images/sofa.jpg",
     }),

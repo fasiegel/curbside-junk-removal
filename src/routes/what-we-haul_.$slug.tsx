@@ -8,6 +8,28 @@ import { breadcrumbsJson, seo, serviceJson } from "@/lib/seo";
 import { SITE, smsHref } from "@/lib/site";
 import { JsonLd } from "@/components/json-ld";
 
+const HAUL_META: Record<string, string> = {
+  furniture:
+    "Furniture removal in San Diego from $69. Sofas, sectionals, dressers, and tables staged at the driveway. Text a photo — you don't need to be home.",
+  mattresses:
+    "Mattress removal in San Diego. One mattress is $69. Mattress plus box spring is $119. Curbside pickup, recycled when the plant will take it.",
+  appliances:
+    "Appliance removal in San Diego from $69. Fridges, washers, dryers, and water heaters hauled from the driveway to scrap. Unplug and empty first.",
+  "household-piles":
+    "Household junk removal in San Diego. Bags, boxes, and garage leftovers from $69 at the driveway. Bigger mixed piles are quoted from a photo.",
+  "tvs-ewaste":
+    "TV and e-waste removal in San Diego from $69. Flat-screens, computers, and printers picked up at the curb for certified recycling.",
+  "gym-equipment":
+    "Treadmill and gym equipment removal in San Diego. $69 per machine staged where the truck can drive up. Ellipticals and bikes included.",
+};
+
+function haulMeta(slug: string, title: string, priceNote: string) {
+  return (
+    HAUL_META[slug] ??
+    `${title} removal in San Diego. ${priceNote} Staged at the driveway. You don't need to be home.`
+  );
+}
+
 export const Route = createFileRoute("/what-we-haul_/$slug")({
   loader: ({ params }) => {
     const item = getHaul(params.slug);
@@ -17,7 +39,7 @@ export const Route = createFileRoute("/what-we-haul_/$slug")({
   head: ({ loaderData }) =>
     seo({
       title: `${loaderData!.item.title} removal in San Diego | ${SITE.name}`,
-      description: loaderData!.item.lede,
+      description: haulMeta(loaderData!.item.slug, loaderData!.item.title, loaderData!.item.priceNote),
       path: `/what-we-haul/${loaderData!.item.slug}`,
       image: loaderData!.item.image,
     }),

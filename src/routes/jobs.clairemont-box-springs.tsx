@@ -11,7 +11,7 @@ export const Route = createFileRoute("/jobs/clairemont-box-springs")({
     seo({
       title: `Two box springs picked up in Clairemont | ${SITE.name}`,
       description:
-        "A real Clairemont Mesa curbside job: two box springs staged by the driveway, loaded on a dolly, and gone. Two items, $119. You don't need to be home.",
+        "Clairemont box spring removal: two foundations staged at the driveway and loaded for $119. A real San Diego curbside pickup. You don't need to be home.",
       path: "/jobs/clairemont-box-springs",
       image: "/images/jobs/clairemont-box-springs/01-staged.jpg",
     }),

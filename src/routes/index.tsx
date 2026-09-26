@@ -15,7 +15,7 @@ export const Route = createFileRoute("/")({
     seo({
       title: `${SITE.name} | San Diego curbside pickup from $69`,
       description:
-        "Curbside junk removal in San Diego by Fred's Junk Removal. The first curbside junk service in the USA (2005). Stage it at the driveway — from $69. You don't need to be home.",
+        "Curbside junk removal in San Diego from $69. Stage it at the driveway — you don't need to be home. Lowest posted rates. Same-day pickup, Mon–Sat.",
       path: "/",
     }),
 });

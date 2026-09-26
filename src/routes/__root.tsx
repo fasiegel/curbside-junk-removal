@@ -14,7 +14,7 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "Curbside junk removal in San Diego by Fred's Junk Removal. Stage it at the driveway — you don't need to be home. Posted prices from $69. Same-day often available.",
+          "Curbside junk removal in San Diego from $69. Stage it at the driveway — you don't need to be home. Lowest posted rates. Same-day pickup, Mon–Sat.",
       },
       { name: "theme-color", content: "#1B365D" },
       { name: "robots", content: "index, follow, max-image-preview:large" },

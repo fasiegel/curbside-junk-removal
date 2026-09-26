@@ -13,7 +13,7 @@ export const Route = createFileRoute("/pricing")({
     seo({
       title: `Junk removal prices in San Diego | ${SITE.name}`,
       description:
-        "Lowest curbside junk removal prices in San Diego. $69 for one item, $119 for two, $179 for three. Packed truck $599. Dump fee included. No surprise charges.",
+        "Curbside junk removal prices in San Diego: $69, $119, and $179 for 1–3 items. Packed truck $599. Dump fee included. No surprise charges.",
       path: "/pricing",
     }),
 });

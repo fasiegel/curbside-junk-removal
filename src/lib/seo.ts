@@ -22,10 +22,11 @@ export function seo({
   const url = absUrl(path);
   const img = absUrl(image);
   const fullTitle = title.includes(SITE.name) ? title : `${title} | ${SITE.name}`;
+  const summary = clipMeta(description);
   return {
     meta: [
       { title: fullTitle },
-      { name: "description", content: description },
+      { name: "description", content: summary },
       { name: "robots", content: "index, follow, max-image-preview:large" },
       { name: "author", content: SITE.parent },
       { name: "geo.region", content: "US-CA" },
@@ -33,7 +34,7 @@ export function seo({
       { name: "geo.position", content: "32.7195;-117.1689" },
       { name: "ICBM", content: "32.7195, -117.1689" },
       { property: "og:title", content: fullTitle },
-      { property: "og:description", content: description },
+      { property: "og:description", content: summary },
       { property: "og:url", content: url },
       { property: "og:image", content: img },
       { property: "og:image:alt", content: fullTitle },
@@ -42,11 +43,25 @@ export function seo({
       { property: "og:site_name", content: SITE.name },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: fullTitle },
-      { name: "twitter:description", content: description },
+      { name: "twitter:description", content: summary },
       { name: "twitter:image", content: img },
     ],
     links: [{ rel: "canonical", href: url }],
   };
+}
+
+/** Google shows about 150–160 characters. Keep a full sentence inside that window. */
+export function clipMeta(text: string, max = 158) {
+  const clean = text.replace(/\s+/g, " ").trim();
+  if (clean.length <= max) return clean;
+  const cut = clean.slice(0, max);
+  const last = cut.lastIndexOf(" ");
+  const clipped = (last > 90 ? cut.slice(0, last) : cut).replace(/[.,;:\s—-]+$/, "");
+  return `${clipped}.`;
+}
+
+export function areaMeta(name: string, zip: string) {
+  return `Curbside junk removal in ${name} (${zip}), San Diego. Driveway pickup from $69. You don't need to be home. Text a photo for a quote.`;
 }
 
 export function localBusinessJson() {

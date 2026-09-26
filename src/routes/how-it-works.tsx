@@ -13,7 +13,7 @@ export const Route = createFileRoute("/how-it-works")({
     seo({
       title: `How curbside junk removal works | ${SITE.name}`,
       description:
-        "Stage items at the driveway, text a photo, we load the truck. You don't need to be home. Same-day curbside junk removal in San Diego, Monday–Saturday 9–4.",
+        "How curbside junk removal works in San Diego: stage items at the driveway, text a photo, we load the truck. You don't need to be home. Mon–Sat, 9–4.",
       path: "/how-it-works",
       image: "/images/staged.jpg",
     }),

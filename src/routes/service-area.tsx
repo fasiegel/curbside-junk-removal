@@ -13,7 +13,7 @@ export const Route = createFileRoute("/service-area")({
     seo({
       title: `San Diego junk removal service area | ${SITE.name}`,
       description:
-        "Curbside junk removal across San Diego — coast, central, South Bay, East County, Mira Mesa, Carmel Valley, and Scripps Ranch. Posted rates from $69.",
+        "Curbside junk removal across San Diego: coast, central, South Bay, East County, Mira Mesa, and Scripps Ranch. Same posted driveway rates from $69.",
       path: "/service-area",
       image: "/images/neighborhood.jpg",
     }),

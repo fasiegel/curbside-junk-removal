@@ -5,7 +5,7 @@ import { PageHero } from "@/components/page-hero";
 import { Button } from "@/components/ui/button";
 import { getNeighborhood, nearbyNeighborhoods } from "@/lib/content";
 import { formatUsd } from "@/lib/pricing";
-import { breadcrumbsJson, seo, serviceJson } from "@/lib/seo";
+import { breadcrumbsJson, areaMeta, seo, serviceJson } from "@/lib/seo";
 import { SITE, smsHref } from "@/lib/site";
 import { JsonLd } from "@/components/json-ld";
 
@@ -18,7 +18,7 @@ export const Route = createFileRoute("/service-area_/$slug")({
   head: ({ loaderData }) =>
     seo({
       title: `${loaderData!.area.name} junk removal | San Diego ${loaderData!.area.zip}`,
-      description: `Curbside junk removal in ${loaderData!.area.name}, San Diego ${loaderData!.area.zip}. ${loaderData!.area.note} From $69. You don't need to be home.`,
+      description: areaMeta(loaderData!.area.name, loaderData!.area.zip),
       path: `/service-area/${loaderData!.area.slug}`,
       image: "/images/neighborhood.jpg",
     }),

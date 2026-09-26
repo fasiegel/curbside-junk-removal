@@ -12,7 +12,7 @@ export const Route = createFileRoute("/faq")({
     seo({
       title: `Junk removal FAQ | ${SITE.name}`,
       description:
-        "Do I need to be home? How much does curbside junk removal cost in San Diego? Same-day windows, recycling, payment, and what we will not haul.",
+        "Curbside junk removal FAQ for San Diego. Cost from $69, whether you need to be home, same-day windows, recycling, payment, and items we won't take.",
       path: "/faq",
     }),
 });
