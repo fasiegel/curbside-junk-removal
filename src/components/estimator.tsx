@@ -29,7 +29,7 @@ function Choose({ onPick }: { onPick: (mode: Mode) => void }) {
   return (
     <div>
       <p className="font-display text-sm tracking-[0.18em] text-navy">QUICK ESTIMATE</p>
-      <h3 className="mt-1 font-display text-3xl tracking-wide">What's your junk removal cost?</h3>
+      <h3 className="mt-1 font-display text-3xl tracking-wide">What does curbside junk removal cost?</h3>
       <p className="mt-2 text-sm text-muted">Do you need a quote by the item or by the truck load?</p>
       <div className="mt-5 grid gap-3 sm:grid-cols-2">
         <button
@@ -106,7 +106,7 @@ function ItemQuote({ onBack }: { onBack: () => void }) {
       </button>
       <div className="flex items-start justify-between gap-3">
         <div>
-          <h3 className="font-display text-3xl tracking-wide">What's your junk removal cost?</h3>
+          <h3 className="font-display text-3xl tracking-wide">What does curbside junk removal cost?</h3>
           <p className="mt-1 text-sm text-muted">Tap items. We'll price a curbside quote.</p>
         </div>
         {count > 0 ? (
