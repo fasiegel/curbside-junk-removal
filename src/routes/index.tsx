@@ -271,7 +271,7 @@ function AboutFred() {
             Siegel, a US Navy veteran who went to bootcamp at RTC San Diego. In 2005
             Fred invented curbside junk removal: the first service in the USA built
             around driveway staging. The same dump truck and crew have hauled more
-            than 50,000 loads since. Fred answers the phone.
+            than 30,000 curbside loads since. Fred answers the phone.
           </p>
           <ul className="mt-6 space-y-3 text-sm text-cream/80">
             <li className="flex gap-2">

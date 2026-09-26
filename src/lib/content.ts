@@ -1,5 +1,5 @@
 export const STATS = [
-  { value: "50,000+", label: "Junk removals since 2005" },
+  { value: "30,000+", label: "Curbside junk removals since 2005" },
   { value: "2005", label: "America's first curbside junk service" },
   { value: "1,400+", label: "Five-star Google & Yelp reviews" },
   { value: "30%+", label: "Typical savings vs full-service" },
