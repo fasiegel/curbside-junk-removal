@@ -79,7 +79,7 @@ export const CALC_GROUPS: CalcGroup[] = [
     key: "ewaste",
     label: "Electronics",
     items: [
-      { key: "largeTv", label: "Large TV", weight: 1 },
+      { key: "largeTv", label: "Large TV", weight: 0.5 },
       { key: "otherTv", label: "Other TV", weight: 0.5 },
       { key: "monitor", label: "Computer monitor", weight: 0.25 },
       { key: "pcTower", label: "PC tower", weight: 0.25 },

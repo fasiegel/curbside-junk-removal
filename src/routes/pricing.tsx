@@ -13,16 +13,16 @@ export const Route = createFileRoute("/pricing")({
     seo({
       title: `Junk removal prices in San Diego | ${SITE.name}`,
       description:
-        "Curbside junk removal prices in San Diego: $69, $119, and $179 for 1–3 items. Packed truck $599. Dump fee included. No surprise charges.",
+        "San Diego curbside prices: tier 1 is $69, including two twin box springs or two TVs. Tier 2 is $119. A packed truck is $599.",
       path: "/pricing",
     }),
 });
 
 const POSTED = [
-  { name: "1 item", curb: 69, full: 130, note: "Sofa, mattress, fridge, TV, treadmill, or 1–5 bags" },
-  { name: "2 items", curb: 119, full: 180, note: "Washer + dryer, mattress + box, two-piece sectional" },
-  { name: "3 items", curb: 179, full: null, note: "Three-piece sectional or three named pieces" },
-  { name: "Packed truck", curb: 599, full: null, note: "20 cubic yards / 2,000 lbs dump bed" },
+  { name: "Tier 1", curb: 69, full: 130, note: "One sofa, queen mattress, or fridge. Two twin box springs or two TVs are also tier 1." },
+  { name: "Tier 2", curb: 119, full: 180, note: "Washer + dryer, queen mattress + box spring, or a two-piece sectional" },
+  { name: "Tier 3", curb: 179, full: null, note: "Three full items, or a three-piece sectional" },
+  { name: "Tier 10", curb: 599, full: null, note: "Packed truck · 20 cubic yards / 2,000 lbs" },
 ];
 
 function PricingPage() {
@@ -61,10 +61,10 @@ function PricingPage() {
           ))}
         </div>
         <p className="mt-6 max-w-3xl text-sm leading-relaxed text-muted">
-          Sample item rates from Fred's 2026 price list: mattress, sofa, dresser, fridge,
-          washer, dryer, treadmill, TV, BBQ, or 1–5 bags — $69 each when staged at a
-          drive-up spot. Need items carried from inside? That's full-service
-          through {SITE.parent}.
+          A full-size sofa, queen mattress, fridge, washer, dryer, or treadmill is tier 1,
+          $69, when staged at a drive-up spot. Two twin box springs are tier 1. Two TVs
+          are tier 1. A queen mattress plus box spring is tier 2, $119. Need items
+          carried from inside? That's full-service through {SITE.parent}.
         </p>
       </section>
       <ClaimBand

@@ -11,7 +11,7 @@ export const Route = createFileRoute("/jobs/clairemont-box-springs")({
     seo({
       title: `Two box springs picked up in Clairemont | ${SITE.name}`,
       description:
-        "Clairemont box spring removal: two foundations staged at the driveway and loaded for $119. A real San Diego curbside pickup. You don't need to be home.",
+        "Clairemont pickup: two twin box springs staged at the driveway and loaded for $69. Tier 1. You don't need to be home.",
       path: "/jobs/clairemont-box-springs",
       image: "/images/jobs/clairemont-box-springs/01-staged.jpg",
     }),
@@ -46,7 +46,7 @@ const STEPS = [
   {
     src: "/images/jobs/clairemont-box-springs/06-to-the-curb.jpg",
     title: "Onto the truck",
-    body: "Last push to the curb. Two box springs count as two items — $119 curbside, dump fee included.",
+    body: "Last push to the curb. Two twin box springs are tier 1 — $69 curbside, dump fee included.",
   },
   {
     src: "/images/jobs/clairemont-box-springs/07-driveway-clear.jpg",
@@ -61,7 +61,7 @@ function JobPage() {
       <PageHero
         kicker="CLAIREMONT · 92117"
         title="Two box springs, curbside."
-        lede="A Clairemont Mesa driveway. Two box springs staged outside. The crew loaded them and left the pad clear. Posted rate: $119 for two items."
+        lede="A Clairemont Mesa driveway. Two twin box springs staged outside. The crew loaded them and left the pad clear. Posted rate: tier 1, $69."
       >
         <div className="flex flex-col gap-3 sm:flex-row">
           <Button asChild>
@@ -100,7 +100,7 @@ function JobPage() {
         <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-4 py-12 sm:flex-row sm:items-center sm:px-6">
           <div>
             <h2 className="font-display text-3xl tracking-wide">Same price for your box springs.</h2>
-            <p className="mt-2 text-cream/75">One is $69. Two are $119. Stage them at the driveway and text a photo.</p>
+            <p className="mt-2 text-cream/75">Two twin box springs are tier 1, $69. A queen mattress plus box spring is tier 2, $119. Stage them and text a photo.</p>
           </div>
           <Button variant="invert" asChild>
             <Link to="/what-we-haul/$slug" params={{ slug: "mattresses" }}>

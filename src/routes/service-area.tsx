@@ -59,7 +59,7 @@ function AreaPage() {
         alt="Lowest curbside junk removal prices in San Diego, from $69"
         kicker="COUNTYWIDE"
         title="Lowest curbside prices in San Diego."
-        body="Same posted rates from San Ysidro to La Jolla. One item $69. Two $119. Three $179. Text a photo from any neighborhood on this list."
+        body="Same posted rates from San Ysidro to La Jolla. Tier 1 is $69, including two twin box springs or two TVs. Tier 2 is $119. Tier 3 is $179."
       />
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
         <div className="rounded-xl bg-navy p-6 text-cream">

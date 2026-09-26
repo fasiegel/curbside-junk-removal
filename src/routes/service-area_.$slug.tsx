@@ -59,9 +59,9 @@ function claimFor(slug: string) {
 }
 
 const RATES = [
-  { name: "1 item", price: 69 },
-  { name: "2 items", price: 119 },
-  { name: "3 items", price: 179 },
+  { name: "Tier 1", price: 69 },
+  { name: "Tier 2", price: 119 },
+  { name: "Tier 3", price: 179 },
 ];
 
 function AreaDetailPage() {
@@ -183,7 +183,7 @@ function ClairemontJob() {
         <h2 className="mt-2 font-display text-3xl tracking-wide">Two box springs, this driveway.</h2>
         <p className="mt-3 text-sm leading-relaxed text-muted">
           Staged outside a Clairemont garage. The crew dollied both foundations to the
-          truck and left the pad clear. Two items, $119.
+          truck and left the pad clear. Two twin box springs, tier 1, $69.
         </p>
         <Button className="mt-6" asChild>
           <Link to="/jobs/clairemont-box-springs">

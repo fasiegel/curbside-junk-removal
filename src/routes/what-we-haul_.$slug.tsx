@@ -12,13 +12,13 @@ const HAUL_META: Record<string, string> = {
   furniture:
     "Furniture removal in San Diego from $69. Sofas, sectionals, dressers, and tables staged at the driveway. Text a photo — you don't need to be home.",
   mattresses:
-    "Mattress removal in San Diego. One mattress is $69. Mattress plus box spring is $119. Curbside pickup, recycled when the plant will take it.",
+    "Mattress removal in San Diego. Two twin box springs are tier 1, $69. A queen mattress plus box spring is tier 2, $119.",
   appliances:
     "Appliance removal in San Diego from $69. Fridges, washers, dryers, and water heaters hauled from the driveway to scrap. Unplug and empty first.",
   "household-piles":
     "Household junk removal in San Diego. Bags, boxes, and garage leftovers from $69 at the driveway. Bigger mixed piles are quoted from a photo.",
   "tvs-ewaste":
-    "TV and e-waste removal in San Diego from $69. Flat-screens, computers, and printers picked up at the curb for certified recycling.",
+    "TV removal in San Diego. One TV or two TVs are tier 1, $69. Picked up at the curb for certified e-waste recycling.",
   "gym-equipment":
     "Treadmill and gym equipment removal in San Diego. $69 per machine staged where the truck can drive up. Ellipticals and bikes included.",
 };
@@ -171,10 +171,11 @@ function BoxSpringJob() {
       />
       <div>
         <p className="font-display text-sm tracking-[0.18em] text-navy">CLAIREMONT</p>
-        <h2 className="mt-2 font-display text-3xl tracking-wide">Two box springs, $119.</h2>
+        <h2 className="mt-2 font-display text-3xl tracking-wide">Two twin box springs, $69.</h2>
         <p className="mt-3 text-sm leading-relaxed text-muted">
           A real curbside pickup: both foundations staged at the driveway, rolled on a
-          dolly, and gone. Mattress plus box spring is the same two-item rate.
+          dolly, and gone. Two twin box springs are tier 1. A queen mattress plus box
+          spring is tier 2, $119.
         </p>
         <Button className="mt-6" asChild>
           <Link to="/jobs/clairemont-box-springs">

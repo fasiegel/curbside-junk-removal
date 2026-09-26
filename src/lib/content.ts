@@ -60,10 +60,10 @@ export const HAUL = [
     title: "Mattresses",
     body: "Mattresses and box springs. Routed into California mattress recycling when the plant will take them.",
     image: "/images/mattress.jpg",
-    lede: "Any size mattress is $69 at the curb. Mattress plus box spring is two items — $119. We route them into California mattress recycling when the plant will take them.",
+    lede: "A queen or king mattress is tier 1, $69. Two twin box springs are also tier 1, $69 — each twin foundation is half an item. A queen mattress plus box spring is tier 2, $119. We route them into California mattress recycling when the plant will take them.",
     staging: "Stand it on edge at the driveway or garage. Bag it if you can. Wet or heavily soiled mattresses still go — tell Fred in the photo.",
     pieces: ["Twin, full, queen, and king mattresses", "Box springs and foundations", "Mattress + box spring sets", "Sleeper-sofa mattresses pulled from the frame"],
-    priceNote: "Mattress $69. Mattress + box spring $119.",
+    priceNote: "Two twin box springs $69. Queen mattress + box spring $119.",
   },
   {
     slug: "appliances",
@@ -90,10 +90,10 @@ export const HAUL = [
     title: "TVs & e-waste",
     body: "Flat-screens, monitors, computers, printers, and other electronics — hauled to certified e-waste recycling.",
     image: "/images/ewaste.jpg",
-    lede: "Flat-screens, monitors, computers, and printers. Any size TV is $69 at the curb. We take electronics to certified e-waste recycling — we do not wipe hard drives, so pull them first.",
+    lede: "Any TV is half an item. One TV is tier 1, $69. Two TVs are still tier 1, $69. We take electronics to certified e-waste recycling — we do not wipe hard drives, so pull them first.",
     staging: "Stand TVs upright at the driveway. Bundle cords if you have them. Remove hard drives before we arrive if you care about the data.",
     pieces: ["TVs and computer monitors, any size", "Desktops, towers, and laptops", "Printers, scanners, and copiers", "Stereos, game consoles, and small electronics"],
-    priceNote: "One TV or computer $69. Two pieces $119.",
+    priceNote: "One or two TVs: tier 1, $69.",
   },
   {
     slug: "gym-equipment",
@@ -201,7 +201,7 @@ export const FAQS = [
   },
   {
     q: "How much does curbside junk removal cost?",
-    a: "Posted rates start at $69 for one item or a small load under 200 lbs. Two items are $119. Three items are $179. A packed dump bed is $599. Labor, haul, and disposal are included. The quote you accept from photos is the amount you pay.",
+    a: "Loads are priced by tier. Tier 1 is $69 — one full item, two twin box springs, or two TVs. Tier 2 is $119. Tier 3 is $179. A packed dump bed is $599. Labor, haul, and disposal are included. The quote you accept from photos is the amount you pay.",
   },
   {
     q: "How is this cheaper than full-service?",

@@ -119,9 +119,9 @@ export function localBusinessJson() {
       "@type": "OfferCatalog",
       name: "Curbside junk removal rates",
       itemListElement: [
-        { "@type": "Offer", name: "1 item curbside", price: "69.00", priceCurrency: "USD" },
-        { "@type": "Offer", name: "2 items curbside", price: "119.00", priceCurrency: "USD" },
-        { "@type": "Offer", name: "3 items curbside", price: "179.00", priceCurrency: "USD" },
+        { "@type": "Offer", name: "Tier 1 curbside", price: "69.00", priceCurrency: "USD" },
+        { "@type": "Offer", name: "Tier 2 curbside", price: "119.00", priceCurrency: "USD" },
+        { "@type": "Offer", name: "Tier 3 curbside", price: "179.00", priceCurrency: "USD" },
         { "@type": "Offer", name: "Packed dump bed", price: "599.00", priceCurrency: "USD" },
       ],
     },
