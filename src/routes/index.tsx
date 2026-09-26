@@ -232,11 +232,11 @@ function EstimatorSection() {
         <p className="font-display text-sm tracking-[0.18em] text-navy">POSTED PRICES</p>
         <h2 className="mt-2 font-display text-3xl tracking-wide sm:text-4xl">Build a load. See the price.</h2>
         <p className="mt-3 max-w-2xl text-base text-muted">
-          One item is $69. Two is $119. Three is $179. Add pieces, then text Fred
-          the quote. Mixed piles bigger than three items are quoted from a photo.
+          Price it by the item or by the truck load. Curbside tiers run $69 to $599.
+          Text Fred the quote — the price you accept is the amount you pay.
         </p>
         <div className="mt-8">
-          <Estimator compact />
+          <Estimator />
         </div>
       </div>
     </section>

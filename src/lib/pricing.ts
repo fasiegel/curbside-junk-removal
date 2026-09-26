@@ -1,242 +1,210 @@
-export type CatalogItem = {
-  id: string;
-  name: string;
-  detail: string;
-  category: "furniture" | "mattress" | "appliance" | "ewaste" | "gym" | "outdoor" | "bags";
-  units: number;
-  image?: string;
-};
-
-export const CATALOG: CatalogItem[] = [
-  {
-    id: "sofa",
-    name: "Sofa / loveseat / recliner",
-    detail: "Up to a 3-seater. Sleeper sofa counts as one.",
-    category: "furniture",
-    units: 1,
-    image: "/images/sofa.jpg",
-  },
-  {
-    id: "sectional-2",
-    name: "2-piece sectional",
-    detail: "Each sectional piece is one item.",
-    category: "furniture",
-    units: 2,
-  },
-  {
-    id: "sectional-3",
-    name: "3-piece sectional",
-    detail: "Three pieces, one pickup.",
-    category: "furniture",
-    units: 3,
-  },
-  {
-    id: "dresser",
-    name: "Dresser, desk, or table",
-    detail: "Standard household furniture piece.",
-    category: "furniture",
-    units: 1,
-  },
-  {
-    id: "chair",
-    name: "Chair or nightstand",
-    detail: "Dining chair, office chair, or nightstand.",
-    category: "furniture",
-    units: 1,
-  },
-  {
-    id: "mattress",
-    name: "Mattress",
-    detail: "Any size, including queen. Recycled when possible.",
-    category: "mattress",
-    units: 1,
-    image: "/images/mattress.jpg",
-  },
-  {
-    id: "box-spring",
-    name: "Box spring",
-    detail: "Priced as its own item.",
-    category: "mattress",
-    units: 1,
-  },
-  {
-    id: "mattress-set",
-    name: "Mattress + box spring",
-    detail: "Two items, one trip.",
-    category: "mattress",
-    units: 2,
-    image: "/images/mattress.jpg",
-  },
-  {
-    id: "fridge",
-    name: "Refrigerator or freezer",
-    detail: "Unplug and empty before pickup.",
-    category: "appliance",
-    units: 1,
-    image: "/images/appliances.jpg",
-  },
-  {
-    id: "washer",
-    name: "Washing machine",
-    detail: "Disconnect hoses if you can.",
-    category: "appliance",
-    units: 1,
-  },
-  {
-    id: "dryer",
-    name: "Dryer",
-    detail: "Disconnect the vent if you can.",
-    category: "appliance",
-    units: 1,
-  },
-  {
-    id: "washer-dryer",
-    name: "Washer and dryer pair",
-    detail: "Two appliances, staged together.",
-    category: "appliance",
-    units: 2,
-    image: "/images/appliances.jpg",
-  },
-  {
-    id: "water-heater",
-    name: "Water heater",
-    detail: "Must be drained and disconnected.",
-    category: "appliance",
-    units: 1,
-  },
-  {
-    id: "small-appliance",
-    name: "Microwave or small appliance",
-    detail: "Toaster oven, window AC, and similar.",
-    category: "appliance",
-    units: 1,
-  },
-  {
-    id: "tv",
-    name: "TV or monitor",
-    detail: "Recycled as e-waste. Any size.",
-    category: "ewaste",
-    units: 1,
-  },
-  {
-    id: "computer",
-    name: "Computer, printer, or tower",
-    detail: "Hard drives are not wiped — remove them first.",
-    category: "ewaste",
-    units: 1,
-  },
-  {
-    id: "treadmill",
-    name: "Treadmill",
-    detail: "Stage it where the truck can drive up.",
-    category: "gym",
-    units: 1,
-    image: "/images/gym.jpg",
-  },
-  {
-    id: "elliptical",
-    name: "Elliptical or exercise bike",
-    detail: "Awkward, heavy pieces we load for you.",
-    category: "gym",
-    units: 1,
-    image: "/images/gym.jpg",
-  },
-  {
-    id: "grill",
-    name: "BBQ grill",
-    detail: "Empty propane tanks stay with you.",
-    category: "outdoor",
-    units: 1,
-  },
-  {
-    id: "patio",
-    name: "Patio chair or small outdoor piece",
-    detail: "One standard outdoor item.",
-    category: "outdoor",
-    units: 1,
-  },
-  {
-    id: "bags",
-    name: "1–5 bags or boxes",
-    detail: "Up to 200 lbs. Counts as one item.",
-    category: "bags",
-    units: 1,
-    image: "/images/pile.jpg",
-  },
-  {
-    id: "yard-small",
-    name: "Small yard pile / lawn bags",
-    detail: "Bundled branches or a few paper lawn bags.",
-    category: "outdoor",
-    units: 1,
-    image: "/images/yard.jpg",
-  },
-];
-
-export const CATEGORIES: { id: CatalogItem["category"]; label: string }[] = [
-  { id: "furniture", label: "Furniture" },
-  { id: "mattress", label: "Mattresses" },
-  { id: "appliance", label: "Appliances" },
-  { id: "ewaste", label: "E-waste" },
-  { id: "gym", label: "Gym" },
-  { id: "outdoor", label: "Outdoor & yard" },
-  { id: "bags", label: "Bags & boxes" },
-];
-
-export type ItemQuote = {
-  units: number;
-  curb: number | null;
-  full: number | null;
-  estimated: boolean;
+export type CalcItem = {
+  key: string;
   label: string;
+  weight: number;
 };
 
-/** Posted curbside item tiers from Fred's 2026 price list. */
-const POSTED = [
-  { units: 0, curb: 0, full: 0, label: "Nothing selected" },
-  { units: 1, curb: 69, full: 130, label: "1 item · up to 2 cubic yards / 200 lbs" },
-  { units: 2, curb: 119, full: 180, label: "2 items · up to 4 cubic yards / 400 lbs" },
-  { units: 3, curb: 179, full: null, label: "3 items · up to 6 cubic yards / 600 lbs" },
+export type CalcGroup = {
+  key: string;
+  label: string;
+  items: CalcItem[];
+};
+
+/** Same item list and weights as Fred's junk removal cost calculator. */
+export const CALC_GROUPS: CalcGroup[] = [
+  {
+    key: "living-room",
+    label: "Furniture",
+    items: [
+      { key: "sectional", label: "Sectional sofa (pcs)", weight: 1 },
+      { key: "sofa", label: "Sofa / Couch", weight: 1 },
+      { key: "futon", label: "Futon", weight: 1 },
+      { key: "chairRecliner", label: "Chair / recliner", weight: 0.5 },
+      { key: "ottoman", label: "Ottoman", weight: 0.5 },
+      { key: "coffeeTable", label: "Coffee table", weight: 0.5 },
+      { key: "sideTable", label: "Side / end tables", weight: 0.5 },
+      { key: "tvStand", label: "TV stand", weight: 0.5 },
+      { key: "mediaConsole", label: "Media console", weight: 1 },
+      { key: "entertainmentCenter", label: "Large entertainment center", weight: 2 },
+      { key: "bookcase", label: "Bookcase", weight: 1 },
+      { key: "cabinet", label: "Cabinet", weight: 1 },
+    ],
+  },
+  {
+    key: "bedroom",
+    label: "Bedroom",
+    items: [
+      { key: "twinMattress", label: "Twin mattress", weight: 0.5 },
+      { key: "queenMattress", label: "Full / queen mattress", weight: 1 },
+      { key: "kingMattress", label: "King mattress", weight: 2 },
+      { key: "twinBox", label: "Twin box spring", weight: 0.5 },
+      { key: "queenBox", label: "Full / queen box spring", weight: 1 },
+      { key: "kingBox", label: "King box spring (2 pc)", weight: 1 },
+      { key: "storageFrame", label: "Storage frame", weight: 3 },
+      { key: "regularFrame", label: "Regular frame", weight: 1 },
+      { key: "metalFrame", label: "Basic metal frame", weight: 0.25 },
+      { key: "fourPoster", label: "Four-poster bed", weight: 2 },
+      { key: "bedDaybed", label: "Daybed", weight: 1 },
+      { key: "bedFuton", label: "Futon", weight: 1 },
+      { key: "nightstand", label: "Nightstand", weight: 0.25 },
+      { key: "bedDresser", label: "Dresser", weight: 1 },
+      { key: "armoire", label: "Armoire", weight: 2 },
+      { key: "chest", label: "Chest", weight: 0.5 },
+      { key: "vanity", label: "Vanity table", weight: 0.5 },
+      { key: "fullMirror", label: "Full-length mirror", weight: 0.25 },
+    ],
+  },
+  {
+    key: "appliances",
+    label: "Appliances",
+    items: [
+      { key: "refrigerator", label: "Refrigerator", weight: 1 },
+      { key: "range", label: "Range / stove", weight: 1 },
+      { key: "wallOven", label: "Wall oven", weight: 1 },
+      { key: "cooktop", label: "Cooktop", weight: 0.25 },
+      { key: "dishwasher", label: "Dishwasher", weight: 0.5 },
+      { key: "microwave", label: "Microwave", weight: 0.5 },
+      { key: "countertop", label: "Countertop item", weight: 0.25 },
+      { key: "waterHeater", label: "Hot water heater", weight: 1 },
+      { key: "washer", label: "Washing machine", weight: 1 },
+      { key: "dryer", label: "Clothes dryer", weight: 1 },
+      { key: "stackingWasherDryer", label: "Washer-dryer stacking", weight: 2 },
+      { key: "ac", label: "Air conditioner", weight: 0.5 },
+      { key: "spaceHeater", label: "Space heater", weight: 0.5 },
+      { key: "dehumidifier", label: "Dehumidifier", weight: 0.25 },
+      { key: "airPurifier", label: "Air purifier", weight: 0.25 },
+    ],
+  },
+  {
+    key: "ewaste",
+    label: "Electronics",
+    items: [
+      { key: "largeTv", label: "Large TV", weight: 1 },
+      { key: "otherTv", label: "Other TV", weight: 0.5 },
+      { key: "monitor", label: "Computer monitor", weight: 0.25 },
+      { key: "pcTower", label: "PC tower", weight: 0.25 },
+      { key: "ewasteBox", label: "Box of misc e-waste", weight: 0.25 },
+      { key: "printer", label: "Desktop printer", weight: 0.25 },
+    ],
+  },
+  {
+    key: "yard-patio",
+    label: "Outdoor",
+    items: [
+      { key: "lawnChair", label: "Lawn chair", weight: 0.2 },
+      { key: "patioChair", label: "Patio chair", weight: 0.25 },
+      { key: "patioTable", label: "Patio table", weight: 0.5 },
+      { key: "picnicTable", label: "Picnic table", weight: 1 },
+      { key: "patioBarstool", label: "Patio barstool", weight: 0.25 },
+      { key: "beverageBar", label: "Beverage bar", weight: 1 },
+      { key: "patioSwing", label: "Patio swing", weight: 1 },
+      { key: "wickerSeat", label: "Wicker furniture (seats)", weight: 0.25 },
+      { key: "grill", label: "Grill", weight: 1 },
+      { key: "patioHeater", label: "Patio heater", weight: 0.5 },
+      { key: "bbHoopSand", label: "BB hoop w/ sand base", weight: 3 },
+      { key: "bbHoopEmpty", label: "BB hoop empty base", weight: 2 },
+      { key: "pot20", label: "Flower pot 20 lbs", weight: 0.2 },
+      { key: "pot50", label: "Flower pot 50 lbs", weight: 0.25 },
+      { key: "pot100", label: "Flower pot 100 lbs", weight: 0.5 },
+      { key: "spaCover", label: "Spa cover", weight: 1 },
+      { key: "largeUmbrella", label: "Large umbrella", weight: 1 },
+      { key: "smallUmbrella", label: "Small umbrella", weight: 0.2 },
+      { key: "storageChest", label: "Storage chest", weight: 0.5 },
+      { key: "umbrellaBase", label: "Umbrella base", weight: 0.25 },
+      { key: "hoseReel", label: "Hose reel", weight: 0.25 },
+      { key: "bagTrash", label: "Bag of trash", weight: 0.25 },
+      { key: "trashCan", label: "Trash can", weight: 0.25 },
+      { key: "cityTrashCan", label: "City trash can", weight: 1 },
+      { key: "lawnMower", label: "Lawn mower", weight: 1 },
+      { key: "misc50", label: "50 lbs of misc", weight: 0.5 },
+    ],
+  },
+  {
+    key: "trash-misc",
+    label: "General",
+    items: [
+      { key: "booksBag", label: "Box / bag of books", weight: 0.25 },
+      { key: "trashBagMisc", label: "Bag of trash", weight: 0.25 },
+      { key: "trashBox", label: "Box of trash", weight: 0.25 },
+      { key: "tire", label: "Tire", weight: 1 },
+    ],
+  },
+  {
+    key: "dining-room",
+    label: "Dining",
+    items: [
+      { key: "diningTable", label: "Dining room table", weight: 1 },
+      { key: "diningChair", label: "Dining chair", weight: 0.25 },
+      { key: "chinaCabinet", label: "China cabinet", weight: 2 },
+    ],
+  },
+  {
+    key: "large-items",
+    label: "Large",
+    items: [
+      { key: "piano", label: "Piano", weight: 3 },
+      { key: "poolTable", label: "Pool table", weight: 3 },
+    ],
+  },
+];
+
+export const TIERS = [
+  { n: 1, label: "Tier 1", price: 69, capacity: "Up to 2 cubic yards / 200 lbs", goodFor: "Single item or a small pile of junk" },
+  { n: 2, label: "Tier 2", price: 119, capacity: "Up to 4 cubic yards / 400 lbs", goodFor: "2 piece sectional sofa, 2 mattresses, or a pickup-truck sized load of trash" },
+  { n: 3, label: "Tier 3", price: 179, capacity: "Up to 6 cubic yards / 600 lbs", goodFor: "Three single items, a 3-piece sectional, or a medium-size load of trash" },
+  { n: 4, label: "Tier 4", price: 239, capacity: "Up to 8 cubic yards / 800 lbs", goodFor: "4 items, or a patio furniture set and grill" },
+  { n: 5, label: "Tier 5", price: 299, capacity: "Up to 10 cubic yards / 1,000 lbs", goodFor: "A full bedroom of furniture: mattress and box spring, bed frame, dresser, 2 nightstands" },
+  { n: 6, label: "Tier 6", price: 359, capacity: "Up to 12 cubic yards / 1,200 lbs", goodFor: "A garage cleanout" },
+  { n: 7, label: "Tier 7", price: 419, capacity: "Up to 14 cubic yards / 1,400 lbs", goodFor: "A full living room of furniture: 3-piece sectional, coffee table, TV stand, 2 end tables, recliner" },
+  { n: 8, label: "Tier 8", price: 479, capacity: "Up to 16 cubic yards / 1,600 lbs", goodFor: "A 1-bedroom apartment cleanout" },
+  { n: 9, label: "Tier 9", price: 539, capacity: "Up to 18 cubic yards / 1,800 lbs", goodFor: "Moving in or out — trash, boxes, and broken furniture" },
+  { n: 10, label: "Tier 10", price: 599, capacity: "Up to 20 cubic yards / 2,000 lbs", goodFor: "When it all has to go" },
 ] as const;
 
-export function quoteForUnits(units: number): ItemQuote {
-  if (units <= 0) {
-    return { units: 0, curb: 0, full: 0, estimated: false, label: "Add items to see a price" };
+export type Tier = (typeof TIERS)[number];
+
+/** Above this combined weight, Fred quotes from a photo instead of a tier. */
+export const WEIGHT_CAP = 10.25;
+
+export const ITEM_DISCLAIMER =
+  "Posted rates. The quote is based solely on the items you chose. If something is unusually large, heavy, or smaller than usual, text Fred for a custom quote.";
+
+export const TRUCK_DISCLAIMER =
+  "Does not include large amounts of construction debris or yard waste.";
+
+export function emptyQty() {
+  const qty: Record<string, number> = {};
+  for (const group of CALC_GROUPS) {
+    for (const item of group.items) qty[item.key] = 0;
   }
-  const posted = POSTED.find((row) => row.units === units);
-  if (posted) {
-    return {
-      units,
-      curb: posted.curb,
-      full: posted.full,
-      estimated: false,
-      label: posted.label,
-    };
-  }
-  const extra = units - 3;
-  return {
-    units,
-    curb: 179 + extra * 60,
-    full: null,
-    estimated: true,
-    label: `${units} items · estimate — text a photo to confirm`,
-  };
+  return qty;
 }
 
-export const TRUCK_TIERS = [
-  { id: 1, fill: 0.1, curb: 69, cy: 2, lbs: 200, blurb: "Single item or a small pile", estimated: false },
-  { id: 2, fill: 0.2, curb: 119, cy: 4, lbs: 400, blurb: "Pickup-truck sized load", estimated: false },
-  { id: 3, fill: 0.3, curb: 179, cy: 6, lbs: 600, blurb: "Three items or a medium pile", estimated: false },
-  { id: 4, fill: 0.4, curb: 239, cy: 8, lbs: 800, blurb: "Staged garage start", estimated: true },
-  { id: 5, fill: 0.5, curb: 299, cy: 10, lbs: 1000, blurb: "Half the dump bed", estimated: true },
-  { id: 6, fill: 0.6, curb: 359, cy: 12, lbs: 1200, blurb: "Moving leftover pile", estimated: true },
-  { id: 7, fill: 0.7, curb: 419, cy: 14, lbs: 1400, blurb: "Large cleanout", estimated: true },
-  { id: 8, fill: 0.8, curb: 479, cy: 16, lbs: 1600, blurb: "Most of the bed", estimated: true },
-  { id: 9, fill: 0.9, curb: 539, cy: 18, lbs: 1800, blurb: "Nearly packed", estimated: true },
-  { id: 10, fill: 1, curb: 599, cy: 20, lbs: 2000, blurb: "Packed dump bed", estimated: false },
-] as const;
+export function loadWeight(qty: Record<string, number>) {
+  let total = 0;
+  for (const group of CALC_GROUPS) {
+    for (const item of group.items) total += (qty[item.key] ?? 0) * item.weight;
+  }
+  return total;
+}
 
-export type TruckTier = (typeof TRUCK_TIERS)[number];
+export function tierFromWeight(weight: number) {
+  if (weight <= 0) return { tooBig: false, tier: null as Tier | null, units: 0 };
+  if (weight >= WEIGHT_CAP) return { tooBig: true, tier: null as Tier | null, units: 0 };
+  const units = Math.max(1, Math.round(weight));
+  return { tooBig: false, tier: TIERS[units - 1] ?? null, units };
+}
+
+export function selectedLines(qty: Record<string, number>) {
+  const lines: { label: string; qty: number }[] = [];
+  for (const group of CALC_GROUPS) {
+    for (const item of group.items) {
+      const count = qty[item.key] ?? 0;
+      if (count > 0) lines.push({ label: item.label, qty: count });
+    }
+  }
+  return lines;
+}
 
 export function formatUsd(n: number) {
   return `$${n.toLocaleString("en-US")}`;

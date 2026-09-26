@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { CATALOG, quoteForUnits, type CatalogItem } from "@/lib/pricing";
+import { emptyQty, selectedLines, tierFromWeight, loadWeight } from "@/lib/pricing";
 
 type CartState = {
   qty: Record<string, number>;
@@ -10,69 +10,38 @@ type CartState = {
 };
 
 export const useCart = create<CartState>()((set, get) => ({
-  qty: {},
+  qty: emptyQty(),
   add: (id) => {
     const current = get().qty[id] ?? 0;
-    set({ qty: { ...get().qty, [id]: current + 1 } });
+    set({ qty: { ...get().qty, [id]: Math.min(10, current + 1) } });
   },
   remove: (id) => {
     const current = get().qty[id] ?? 0;
-    if (current <= 1) {
-      const next = { ...get().qty };
-      delete next[id];
-      set({ qty: next });
-      return;
-    }
-    set({ qty: { ...get().qty, [id]: current - 1 } });
+    set({ qty: { ...get().qty, [id]: Math.max(0, current - 1) } });
   },
   setQty: (id, n) => {
-    if (n <= 0) {
-      const next = { ...get().qty };
-      delete next[id];
-      set({ qty: next });
-      return;
-    }
-    set({ qty: { ...get().qty, [id]: n } });
+    set({ qty: { ...get().qty, [id]: Math.max(0, Math.min(10, n)) } });
   },
-  clear: () => set({ qty: {} }),
+  clear: () => set({ qty: emptyQty() }),
 }));
 
-export function cartLines(qty: Record<string, number>) {
-  const lines: { item: CatalogItem; count: number; units: number }[] = [];
-  for (const item of CATALOG) {
-    const count = qty[item.id] ?? 0;
-    if (count > 0) lines.push({ item, count, units: item.units * count });
-  }
-  return lines;
-}
-
-export function cartUnits(qty: Record<string, number>) {
-  return cartLines(qty).reduce((sum, line) => sum + line.units, 0);
-}
-
-export function cartQuote(qty: Record<string, number>) {
-  return quoteForUnits(cartUnits(qty));
-}
-
-export function cartSmsBody(qty: Record<string, number>, extras?: string) {
-  const lines = cartLines(qty);
-  const quote = cartQuote(qty);
+export function cartSmsBody(qty: Record<string, number>) {
+  const lines = selectedLines(qty);
+  const weight = loadWeight(qty);
+  const result = tierFromWeight(weight);
   const itemLines =
     lines.length === 0
       ? "I'll send a photo of the pile."
-      : lines.map((line) => `• ${line.count}× ${line.item.name}`).join("\n");
-  const price =
-    quote.curb == null
-      ? "Please quote from photos."
-      : quote.estimated
-        ? `Estimated curbside: $${quote.curb} (please confirm from photos)`
-        : `Posted curbside: $${quote.curb}`;
-  const parts = [
+      : lines.map((line) => `• ${line.qty}× ${line.label}`).join("\n");
+  const price = result.tooBig
+    ? "This load is bigger than the posted tiers. Please quote from photos."
+    : result.tier
+      ? `Load size: ${result.tier.label} · ${result.tier.capacity}\nPosted curbside: $${result.tier.price}`
+      : "Please quote from photos.";
+  return [
     "Hi Fred, I'd like to book this furniture removal.",
     itemLines,
     price,
-    extras,
     "I'll stage items at a drive-up spot.",
-  ].filter(Boolean);
-  return parts.join("\n\n");
+  ].join("\n\n");
 }
